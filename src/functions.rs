@@ -168,12 +168,36 @@ fn sort_inner(
     options: impl Into<Options> + Copy,
     reverse: bool,
 ) -> Result<Vec<String>> {
-    // Parse up front so an invalid entry surfaces as an error rather than
-    // panicking inside the comparator.
-    let mut parsed: Vec<(SemVer, String)> = Vec::with_capacity(list.len());
-    for s in list {
-        parsed.push((SemVer::new(s, options)?, s.clone()));
+    // `Array.prototype.sort` never invokes the comparator for fewer than two
+    // elements, so an invalid lone version is returned untouched rather than
+    // throwing.
+    if list.len() < 2 {
+        return Ok(list.to_vec());
     }
+
+    // Which version an invalid list blames is observable, so the parse order
+    // has to match the order V8 first touches each element.
+    //
+    // V8 begins both binary-insertion sort and TimSort run detection with
+    // `comparefn(list[1], list[0])`. `sort`'s comparator is
+    // `(a, b) => compareBuild(a, b)`, which parses its first argument first —
+    // so `sort` reports list[1]. `rsort`'s comparator is
+    // `(a, b) => compareBuild(b, a)`, which swaps them, so it reports list[0].
+    // Everything after index 1 is then touched in ascending order.
+    let mut order: Vec<usize> = (0..list.len()).collect();
+    if !reverse {
+        order.swap(0, 1);
+    }
+    let mut by_index: Vec<Option<SemVer>> = (0..list.len()).map(|_| None).collect();
+    for i in order {
+        by_index[i] = Some(SemVer::new(&list[i], options)?);
+    }
+
+    let mut parsed: Vec<(SemVer, String)> = by_index
+        .into_iter()
+        .zip(list.iter())
+        .map(|(sv, s)| (sv.expect("every index parsed"), s.clone()))
+        .collect();
     parsed.sort_by(|a, b| {
         let (x, y) = if reverse { (&b.0, &a.0) } else { (&a.0, &b.0) };
         let c = x.compare(y);

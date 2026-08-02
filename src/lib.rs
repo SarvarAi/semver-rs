@@ -24,6 +24,7 @@ pub mod range;
 pub mod ranges;
 pub mod re;
 pub mod semver;
+pub mod subset;
 pub mod util;
 
 pub use constants::{RELEASE_TYPES, SEMVER_SPEC_VERSION};
@@ -39,6 +40,7 @@ pub use ranges::{
     gtr, intersects, ltr, max_satisfying, min_satisfying, min_version, outside, simplify_range,
 };
 pub use semver::{IdentifierBase, SemVer};
+pub use subset::subset;
 
 /// The error type for operations that upstream signals by throwing.
 ///

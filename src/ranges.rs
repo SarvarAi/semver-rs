@@ -228,10 +228,20 @@ pub fn simplify_range(
     // than two elements, so `simplifyRange(['nonsense'], '*')` does NOT throw
     // upstream. Reproduce that boundary exactly.
     if v.len() >= 2 {
-        let mut parsed: Vec<(String, SemVer)> = Vec::with_capacity(v.len());
-        for s in &v {
-            parsed.push((s.clone(), SemVer::new(s, options)?));
+        // Same V8 probe order as `sort` (see functions::sort_inner): the first
+        // comparator call is `compare(v[1], v[0])`, so v[1] is parsed first and
+        // an invalid list blames it rather than v[0].
+        let mut order: Vec<usize> = (0..v.len()).collect();
+        order.swap(0, 1);
+        let mut by_index: Vec<Option<SemVer>> = (0..v.len()).map(|_| None).collect();
+        for i in order {
+            by_index[i] = Some(SemVer::new(&v[i], options)?);
         }
+        let mut parsed: Vec<(String, SemVer)> = by_index
+            .into_iter()
+            .zip(v.iter())
+            .map(|(sv, s)| (s.clone(), sv.expect("every index parsed")))
+            .collect();
         parsed.sort_by(|a, b| a.1.compare(&b.1).cmp(&0));
         v = parsed.into_iter().map(|(s, _)| s).collect();
     }

@@ -205,7 +205,9 @@ fn dispatch(name: &str, a: &[Value]) -> Out {
         "simplifyRange" => r::simplify_range(&list(a, 0), s(a, 1), opts(a.get(2)))
             .map(|v| json!(v))
             .map_err(e),
-        "subset" => Err(UNIMPLEMENTED.to_string()),
+        "subset" => semver_npm::subset::subset(s(a, 0), s(a, 1), opts(a.get(2)))
+            .map(|v| json!(v))
+            .map_err(e),
 
         "rangeToString" => Range::new(s(a, 0), opts(a.get(1)))
             .map(|x| json!(x.range()))
