@@ -1,0 +1,197 @@
+{
+  "source": "test/fixtures/invalid-versions.js",
+  "upstreamSha256": "e2286a9de1554e3373d2589a930c68d826ba20bbf13a43f5ffa7089fa97e798e",
+  "shape": "[value, reason, options]",
+  "optionsIndex": 2,
+  "count": 10,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.0.0"
+        },
+        {
+          "k": "string",
+          "v": "too long"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "90071992547409910.0.0"
+        },
+        {
+          "k": "string",
+          "v": "too big"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "0.90071992547409910.0"
+        },
+        {
+          "k": "string",
+          "v": "too big"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "0.0.90071992547409910"
+        },
+        {
+          "k": "string",
+          "v": "too big"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "hello, world"
+        },
+        {
+          "k": "string",
+          "v": "not a version"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "hello, world"
+        },
+        {
+          "k": "string",
+          "v": "even loose, its still junk"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "xyz"
+        },
+        {
+          "k": "string",
+          "v": "even loose as an opt, same"
+        },
+        {
+          "k": "object",
+          "v": {
+            "loose": {
+              "k": "bool",
+              "v": true
+            }
+          }
+        }
+      ],
+      "optionsJs": "{ loose: true }",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "regexp",
+          "v": "/a regexp/"
+        },
+        {
+          "k": "string",
+          "v": "regexp is not a string"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "regexp",
+          "v": "/1.2.3/"
+        },
+        {
+          "k": "string",
+          "v": "semver-ish regexp is not a string"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "object",
+          "v": {
+            "toString": {
+              "k": "other",
+              "v": "() => '1.2.3'"
+            }
+          }
+        },
+        {
+          "k": "string",
+          "v": "obj with a tostring is not a string"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    }
+  ]
+}

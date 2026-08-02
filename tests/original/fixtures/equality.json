@@ -1,0 +1,774 @@
+{
+  "source": "test/fixtures/equality.js",
+  "upstreamSha256": "ffc7ef18180a0f89ace2df1c89893774b22620743271be7fafd72e0ecdb8dac4",
+  "shape": "[v1, v2, options]  // v1 == v2",
+  "optionsIndex": 2,
+  "count": 37,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "v1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "=1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "v 1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "= 1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": " v1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": " =1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": " v 1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": "v1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": "=1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": "v 1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": "= 1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": " v1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": " =1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": " v 1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3-0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": "v1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": "=1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": "v 1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": "= 1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": " v1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": " =1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": " v 1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3-1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": "v1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": "=1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": "v 1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": "= 1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": " v1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": " =1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": " v 1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3-beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta+build"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3-beta+otherbuild"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build"
+        },
+        {
+          "k": "string",
+          "v": " = 1.2.3+otherbuild"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-beta+build"
+        },
+        {
+          "k": "string",
+          "v": "1.2.3-beta+otherbuild"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build"
+        },
+        {
+          "k": "string",
+          "v": "1.2.3+otherbuild"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "  v1.2.3+build"
+        },
+        {
+          "k": "string",
+          "v": "1.2.3+otherbuild"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    }
+  ]
+}

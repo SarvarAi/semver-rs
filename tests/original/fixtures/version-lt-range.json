@@ -1,0 +1,1015 @@
+{
+  "source": "test/fixtures/version-lt-range.js",
+  "upstreamSha256": "1d2504c62d1cb97ef82d62a39ff3c90b2d449226bde2e1f9bdafbaa6f627606e",
+  "shape": "[range, version, options]  // version < range",
+  "optionsIndex": 2,
+  "count": 58,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~1.2.2"
+        },
+        {
+          "k": "string",
+          "v": "1.2.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~0.6.1-1"
+        },
+        {
+          "k": "string",
+          "v": "0.6.1-0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0 - 2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0-beta.2"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0-beta.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0"
+        },
+        {
+          "k": "string",
+          "v": "0.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.1.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.2.9"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "2.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "0.1.20 || 1.2.4"
+        },
+        {
+          "k": "string",
+          "v": "0.1.5"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.x.x"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.x"
+        },
+        {
+          "k": "string",
+          "v": "1.1.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.x || 2.x"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.*.*"
+        },
+        {
+          "k": "string",
+          "v": "1.0.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.*"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.* || 2.*"
+        },
+        {
+          "k": "string",
+          "v": "1.1.9999"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.3"
+        },
+        {
+          "k": "string",
+          "v": "2.2.2"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~2.4"
+        },
+        {
+          "k": "string",
+          "v": "2.3.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~2.4"
+        },
+        {
+          "k": "string",
+          "v": "2.3.5"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~>3.2.1"
+        },
+        {
+          "k": "string",
+          "v": "3.2.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~1"
+        },
+        {
+          "k": "string",
+          "v": "0.2.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~>1"
+        },
+        {
+          "k": "string",
+          "v": "0.2.4"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~> 1"
+        },
+        {
+          "k": "string",
+          "v": "0.2.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~1.0"
+        },
+        {
+          "k": "string",
+          "v": "0.1.2"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~ 1.0"
+        },
+        {
+          "k": "string",
+          "v": "0.1.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1.2"
+        },
+        {
+          "k": "string",
+          "v": "1.2.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "> 1.2"
+        },
+        {
+          "k": "string",
+          "v": "1.2.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1"
+        },
+        {
+          "k": "string",
+          "v": "0.0.0beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~v0.5.4-pre"
+        },
+        {
+          "k": "string",
+          "v": "0.5.4-alpha"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.6.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.6.0-asdf"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.6.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0 - 2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "0.2.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.9999.9999"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.2.9"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.x.x"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.x"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.x || 2.x"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.*.*"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.* || 2.*"
+        },
+        {
+          "k": "string",
+          "v": "1.1.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2"
+        },
+        {
+          "k": "string",
+          "v": "1.9999.9999"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.3"
+        },
+        {
+          "k": "string",
+          "v": "2.2.1"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~>3.2.1"
+        },
+        {
+          "k": "string",
+          "v": "2.3.2"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~>1"
+        },
+        {
+          "k": "string",
+          "v": "0.2.3"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "~1.0"
+        },
+        {
+          "k": "string",
+          "v": "0.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "> 1"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.6.2"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.7.0-asdf"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "^1"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0-0"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.7.0-asdf"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0beta"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ],
+      "optionsJs": "true",
+      "options": {
+        "loose": true,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=0.7.x"
+        },
+        {
+          "k": "string",
+          "v": "0.6.2"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0-alpha"
+        }
+      ],
+      "optionsJs": "undefined",
+      "options": {
+        "loose": false,
+        "includePrerelease": false
+      }
+    }
+  ]
+}

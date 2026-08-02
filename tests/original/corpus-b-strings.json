@@ -1,0 +1,7946 @@
+{
+  "generatedFrom": "npm/node-semver @ 6e05b7637396ac66522cff8731f07cfe0ef49a29 (v7.8.5)",
+  "note": "Corpus B. String literals harvested from all upstream test files plus the extracted fixtures. Classified with the upstream implementation; classification is metadata only and never filters the corpus.",
+  "sourceFiles": 66,
+  "total": 1133,
+  "summary": {
+    "strictVersion": 346,
+    "looseVersion": 398,
+    "validRange": 749,
+    "coercible": 897,
+    "unclassified": 223
+  },
+  "entries": [
+    {
+      "s": "",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "\t1.13.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "\t1.2.13",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "\t1.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "\t13.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "\n            : ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n        )\n      } else {\n        t.equal(parsed.raw, wanted, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n      t.equal(actual, expected, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    const coercedVersion = coerce(input, options) || {}\n    const expectedVersion = parse(expected)\n    t.equal(expectedVersion.compare(coercedVersion), 0,\n      ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "\n    t.equal(actual, expected, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    t.equal(found, wanted, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    t.notOk(outside(version, range, '>', options), msg)\n  })\n  t.end()\n})\n\ntest('negative ltr tests', (t) => {\n  // [range, version, options]\n  // Version should NOT be less than range\n  versionNotLtr.forEach(([range, version, options = false]) => {\n    const msg = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    t.ok(ltr(version, range, options), msg)\n  })\n  t.end()\n})\n\ntest('negative ltr tests', (t) => {\n  // [range, version, options]\n  // Version should NOT be less than range\n  versionNotLtr.forEach(([range, version, options = false]) => {\n    const msg = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    t.ok(outside(version, range, '<', options), msg)\n  })\n  t.end()\n})\n\ntest('negative gtr tests', (t) => {\n  // [range, version, options]\n  // Version should NOT be greater than range\n  versionNotGtr.forEach(([range, version, options = false]) => {\n    const msg = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n    t.ok(outside(version, range, '>', options), msg)\n  })\n  t.end()\n})\n\ntest('ltr tests', (t) => {\n  // [range, version, options]\n  // Version should be less than range\n  versionLtr.forEach(([range, version, options = false]) => {\n    const msg = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n  const tooLong = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\n  t.equal(new Range(r).range, '1.2.3 <1.3.0')\n  t.equal(validRange(r), '1.2.3 <1.3.0')\n  t.equal(minVersion(r).version, '1.2.3')\n  t.equal(minSatisfying(['1.2.3'], r), '1.2.3')\n  t.equal(maxSatisfying(['1.2.3'], r), '1.2.3')\n  t.end()\n})\n\ntest('range with 0', (t) => {\n  const r = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "\n  t.equal(new SemVer(v).version, '1.2.3')\n  t.throws(() => new SemVer(tooLong))\n  t.end()\n})\n\ntest('comparator', (t) => {\n  const comparator = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "\n  t.throws(() => new Range(r).range)\n  t.equal(validRange(r), null)\n  t.throws(() => minVersion(r).version)\n  t.equal(minSatisfying(['1.2.3'], r), null)\n  t.equal(maxSatisfying(['1.2.3'], r), null)\n  t.end()\n})\n\ntest('semver version', (t) => {\n  const v = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "   =1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "  =v1.2.3   ",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "  v1.2.3+build",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " - 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " 1.1.3 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.2.1 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.2.2-4 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.2.3 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.2.3-4 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.2.3-pre ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.3.3-pre ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 1.x.x+build   >2.x.x+build  ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 2.2.3-4 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " 3.2.3-pre ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3+otherbuild",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " = 1.2.3-beta+otherbuild",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " =1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " =1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " =1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " =1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v 1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " v 1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " v 1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " v 1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.3 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.3-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.3-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.3-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.2.8 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v1.8.3 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " v8.2.3 ",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": " || 2.0.0+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "${typeof v}",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "${v0}",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "${v1}",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "''",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "(no args)",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n\n      opts.loose = true\n      t.equal(intersects(comp0, comp1, opts), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n\n      t.equal(comp1.intersects(comp0, { includePrerelease }), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n\n    // also test with an object. they are === because obj.version matches\n    t.equal(compare(new SemVer(v0, { loose: loose }),\n      new SemVer(v1, { loose: loose })), 0,\n    ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n\n    // also test with an object. they are === because obj.version matches\n    t.ok(cmp(new SemVer(v0, { loose: loose }), '===',\n      new SemVer(v1, { loose: loose })),\n    ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n\n    const parsed = parse(pre, options)\n    const parsedAsInput = parse(pre, options)\n    if (wanted) {\n      parsed.inc(what, id, base)\n      t.equal(parsed.version, wanted, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n\n    const parsed = parseAndFreezeSemVerObject(pre)\n    const semverTruncated = truncate(parsed, truncation)\n    t.equal(semverTruncated, expected, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n\n    t.ok(!cmp(new SemVer(v0, loose), '!==', new SemVer(v1, loose)),\n      ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n\n    t.ok(cmp(v0, '!==', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      if (parsed.build.length) {\n        t.equal(\n          parsed.raw,\n          ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n      t.end()\n    }))\n})\n\ntest('ranges intersect', (t) => {\n  rangeIntersection.forEach(([r0, r1, expect]) => {\n    t.test(",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(c0, c1, opts), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(c1, c0, opts), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(comp1, comp0, opts), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(r0, r1), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(r0, r1, true), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(r1, r0, true), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(range0, range1), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(range0, range1, true), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(range1, range0), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(intersects(range1, range0, true), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.equal(range1.intersects(range0), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n      t.same(parse(actual).build, [], ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n      }\n\n      const preIncObject = JSON.stringify(parsedAsInput)\n      inc(parsedAsInput, what, options, id, base)\n      const postIncObject = JSON.stringify(parsedAsInput)\n      t.equal(\n        postIncObject,\n        preIncObject,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n      } else {\n        t.equal(new Range(range, options).range || '*', expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n    t.equal(compare(v0, v0, loose), 0, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.equal(compare(v1, v0, loose), -1, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.equal(compare(v1, v0, loose), 0, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.equal(compare(v1, v1, loose), 0, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.equal(expectedVersion.compareBuild(coercedVersion), 0,\n      ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.notOk(eq(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.notOk(neq(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.notOk(neq(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.notOk(neq(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!cmp(v0, '!=', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!cmp(v0, '<', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!cmp(v0, '===', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!cmp(v1, '>', v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!gt(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!gt(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!gt(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!gte(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!lt(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!lt(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(!lt(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v0, '!=', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v0, '=', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v0, '==', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v0, '>=', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v1, '<', v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v1, '<=', v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(cmp(v1, '==', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(eq(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(eq(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(eq(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(gte(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(gte(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(gte(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(lt(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(lte(v0, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(lte(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(lte(v1, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n    t.ok(neq(v1, v0, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n  })\n})\n\ntest('range parsing', t => {\n  t.plan(rangeParse.length)\n  rangeParse.forEach(([range, expect, options]) =>\n    t.test(",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ")\n  }))\n})\n\ntest('equality tests', (t) => {\n  // [version1, version2]\n  // version1 should be equivalent to version2\n  t.plan(equality.length)\n  equality.forEach(([v0, v1, loose]) => t.test(",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ")\n  }))\n})\n\ntest('equality tests', t => {\n  t.plan(equality.length)\n  equality.forEach(([v0, v1, loose]) => t.test(",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "))\n})\n\ntest('negative range tests', t => {\n  t.plan(rangeExclude.length)\n  rangeExclude.forEach(([range, ver, options]) =>\n    t.notOk(satisfies(ver, range, options), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "* || >=2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ",",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ",\n    ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ",\n      ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ",\n          ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ",\n      }\n    )\n  })\n\n  t.end()\n})\n\ntest('incrementing', t => {\n  t.plan(increments.length)\n  increments.forEach(([\n    version,\n    inc,\n    expect,\n    options,\n    id,\n    base,\n  ]) => t.test(",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ",\n  ]\n  coerceToNull.forEach((input) => {\n    const msg = ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ", ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ", '1.0.0'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '1.2.0'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '1.2.3'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '11.1.1'],\n    ['1'.repeat(16), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '2.0.0'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '2.3.0'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", '2.3.4'],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", 'too big'],\n  [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ", null],\n  [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ", t => {\n      const comp0 = new Comparator(c0)\n      const comp1 = new Comparator(c1)\n\n      t.equal(comp0.intersects(comp1, { includePrerelease }), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n      const opts = { loose: false, includePrerelease }\n      const comp0 = new Comparator(c0)\n      const comp1 = new Comparator(c1)\n\n      t.equal(intersects(comp0, comp1, opts), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n      const range0 = new Range(r0)\n      const range1 = new Range(r1)\n\n      t.equal(intersects(r1, r0), expect, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n      const range0 = new Range(r0)\n      const range1 = new Range(r1)\n\n      t.equal(range0.intersects(range1), expect,\n        ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n      if (expect === null) {\n        t.throws(() => new Range(range, options), TypeError, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ", t => {\n    t.plan(2)\n    t.ok(!gt(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(2)\n    t.ok(!lt(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(2)\n    t.ok(gte(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(2)\n    t.ok(lte(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.equal(compare(v0, v1, loose), 1, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.notOk(eq(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.notOk(neq(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(!lt(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(!lte(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(eq(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(gt(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(gte(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(4)\n    t.ok(neq(v0, v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(5)\n    t.equal(compare(v0, v1, loose), 0, ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(8)\n    t.ok(cmp(v0, '', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ", t => {\n    t.plan(8)\n    t.ok(cmp(v0, '>', v1, loose), ",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "-",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--help",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--increment",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--ltr",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--preid",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--preid=beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--range",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--rtl",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "--version",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-928490632884417731e7af463c92b034d6a78268fc993bcb88a57944",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "-?",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-c",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-h",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-i",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-l",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-n",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-p",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-r",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-rv",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "-v",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ".",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "..",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ".0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ".1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ".js",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0-alpha.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.0beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "0.0.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.1-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.1-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.1-pre-2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.2-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.2-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.3-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.0.90071992547409910",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "0.1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.0-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.1-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.20",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.20 || 1.2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.20 || >1.2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.20||1.2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.93",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.1.97",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.10.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.12.0-dev.1150",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.12.0-dev.1150+3c22cecee",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.1-alpha.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.3-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.2.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.5.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.5.4-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.5.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.0-asdf",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.1-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.1-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.1-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.6.1beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "0.6.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.0-asdf",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.1-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.2-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.8.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.8.0-asdf",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.8.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.9.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.9.7",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.9.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "0.90071992547409910.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "0.99.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "01.02.03",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 - 2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 <1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 <=1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 >1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1 || 2 || 3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.*.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.*.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0 - 2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0 - 2.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 - 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 - x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 <1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 >1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 || 1.0.1 || 1.0.2 || 1.0.3 || 1.0.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0 || 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0+0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0+0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0+1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0+1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-beta.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-beta.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-beta.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-rc.1+build.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-rc.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0-rc1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.0beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.0.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.1-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.1-alpha.1.1a.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.1-beta1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.1-rc1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.12",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.0.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1 - 1.8.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-pre-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-pre-2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.0-rc1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.1 - 1.8.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.1-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.1-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.1-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.9999",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.1.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2 - 3.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2 - 3.4.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.* || 2.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-alpha.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-dev",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.0beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1-dev",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1-dev.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.1-dev.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.2-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.2-alpha.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.2-alpha.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3 - 3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3 - 3.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3 1.2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3 2.3.4 || 2.3.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3 >=1.2.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+456",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa || 2.0.0+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+asdf - 2.4.3+asdf",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build.1a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build.a1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build.alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+build.alpha.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+new-build",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+otherbuild",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+sha256.",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+sha256.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+sha512.",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3+sha512.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-123",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-1a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-4-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-5-Foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-5-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-R2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a.10",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a.b",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a.b.c.10.d.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a.b.c.5.d.100",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-a1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha+build",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha-.-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.0.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.0.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.0.pr.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.0.pr.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.1.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.0.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.1.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.2.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.3.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.beta.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.beta.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.beta.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.10.beta.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.11.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.12.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.2.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.3.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-alpha.9.beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-asdf",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-bar",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-beta+build",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-beta+otherbuild",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-beta.01",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-beta.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.bar",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.bar.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.bar.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-dev.baz",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-pre+asdf - 2.4.3-pre+asdf",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-pre+asdf - 2.4.3pre+asdf",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-pre.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-r100",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-r2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3-tag",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3.4.5.6",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3foo",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3pre+asdf - 2.4.3-pre+asdf",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3pre+asdf - 2.4.3pre+asdf",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3tag",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.2.3||2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.4-alpha.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.4-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.5-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.5-alpha.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.5-dev.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.6",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.8",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.2.x || 2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0 || <1.0.0 >2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-dev",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-dev.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.0-dev.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.3.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.4.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.4.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.4.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.5.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.6.1-5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.7.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.7.2-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.8.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.9.7",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.9999.9999",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x - x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x+build.123",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.x.5 || 2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x+build <2.x.x+meta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x+build >2.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x+build || 2.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x+build.123 >2.x.x+meta-data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x+meta-data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x-alpha+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "1.x.x-alpha+build || 2.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "1a",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.*.*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-a",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-beta.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-dev",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-dev.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-dev.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-pre.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0-rc1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0asdf",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0b1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0b2",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0b3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2.0.0beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "2.0.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.0.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1 || 2.2 || 2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.0 - 2.3.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.0-pre.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.1-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.1.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.16.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.2.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.4-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.3.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.4.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.4.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.4.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.4.3-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.4.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.5.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.5.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.7.2+asdf",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.9.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.9999.9999",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "2.x.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0 || 3.1 || 3.2 || 3.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-alpha.beta.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-alpha.beta.5.4",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-alpha.beta.5.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-alpha.beta.gamma",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.0.0-pre.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.1.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.1.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.1.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.2.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.2.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.2.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.3.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.3.2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.5.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "3.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.17.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.17.0+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "4.17.0+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.17.0+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.2.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.2.0-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.2.0foo",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "4.5.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.5.6",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.5.6+dadb0d",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.5.6-rc2",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.5.6-rc2+dadb0d",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "4.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "42.6.7",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "42.6.7-alpha",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "42.6.7-alpha+rev.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "42.6.7.9.3-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "456",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "5.0.0-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "5.0.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "5.9.6",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "7.9.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "9",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "9.9.9-alpha.0.pr.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "9007199254740991.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "90071992547409910.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "<",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "<\t2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<    2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "< 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "< 1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "<0.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.0.0-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.0.0-beta >0.0.0-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.0.1-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.1.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<0.7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1 <2 <3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.0.0 >2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.0.0 >=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.1.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.2.3-pre.0 || 2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.5.0 || >=1.6.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.6.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<1.6.16 || >=1.7.0 <1.7.11 || >=1.8.0 <1.8.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2 || >4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2.4.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<2.5.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<3 <2 <1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<3.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<3.5.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<4.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=   2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=  2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<= 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=0.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=0.7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1 <=2 <=3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.0.0 >1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.0.0 >=1.0.0 || 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.0.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.2.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.6.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=1.6.16 || >=1.7.0 <1.7.11 || >=1.8.0 <1.8.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=2 || >=4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=3 <=2 <=1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=3.4.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<=v1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "<X",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "<x <* || >* 2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "= 1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "= 1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "= 1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "= 1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "= is ignored",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "=0.1.0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=0.7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.0.0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.2.21",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=1.21.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=21.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "=9007199254740991.0.0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "== 1.0.0 || foo",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ">  1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "> 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "> 1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "> 1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "> 1.2.3+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "> 1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": ">0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">0.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">0.0.0-alpha <0.0.0-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">0.2.3 >0.2.4 <=0.2.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">01.02.03",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ">1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1 >2 >3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.0.0 <1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.0.0 <=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.0.0-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.2.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.2.3-pre.0 || 2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.4.0 <1.6.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.4.0 <1.6.0 || 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.5.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.x+build <=2.x.x+meta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">1.x.x-alpha+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2 <1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2 || *",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2 || >1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2 || >1.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2 || >1.0.0-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">3 >2 >1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">4 <3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">4 || <2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=   1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=  1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">= 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">= 1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">= 1.2.3+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": ">= 1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">= v1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": ">=0.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.0.1 <0.0.2-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.0.1-beta <0.0.2-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.1.0 <0.2.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.1.2 <0.2.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.1.97",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.2.3 <=0.2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.2.3 || <0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.2.3||<0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=0.7.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=09090",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ">=09090-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": ">=1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1 >=2 >=3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <1.1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <1.1.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <1.1.0-pre",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <2.0.0-0 >=3.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <2.0.0-0||>=2.0.0 <3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <2.1.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <=1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <=1.0.0 || 2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <=1.1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0 <=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0-0 <2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0-0 <2.0.1-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0-0 <2.1.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.0-0 <3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.0.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.1.1 <2 || >=2.2.2 <2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <1.3.0-0||>=2.0.0 <3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <2.0.0-0 >=1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <3.5.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0 <=3.4.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.0-0 <1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.1 1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.1 >=1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3 <1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3 <2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3 <3.5.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3 <=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3 >=1.2.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3-beta <1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3-beta.4 <1.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3-beta.4 <2.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.6.16 <1.7.0 || >=1.7.11 <1.8.0 || >=1.8.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.x+build <2.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=1.x.x-alpha+build <2.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2 || *",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.0.0 <3.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.2.2 <2 || >=1.1.1 <2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.3.0 <2.4.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.4.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=2.4.0 <2.5.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3 >=2 >=1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3.0.0 <3.1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3.2.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=3.2.1 <3.3.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=4 || <=2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=9007199254740990.0.0 <9007199254740991.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=9090.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">=v1.3.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": ">X",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": ">x 2.x || * || <x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "@@VERSION@@",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "ANY matches anything",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Invalid Version: bad",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Invalid comparator: foo bar baz",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Invalid operator: a frog",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Invalid version. Must be a string. Got type \"object\".",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Must provide a hilo val of \"<\" or \">\"",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "SEMVER hello, world\n",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "SEMVER_SPEC_VERSION",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "Semver itself has a list of src, re, and tokens",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "TypeError",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\\s*",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "\\s+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "],\n    [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "],\n  [",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "^ 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^ 1.2 ^ 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.0.1-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.0.1-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.0.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.1.0 || ~3.0.1 || 5.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.1.0 || ~3.0.1 || >4 <=5.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.1.1-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^0.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0 || ~2.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0-0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0-rc2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.0.0alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "^1.1.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.1.1 || >=2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.1.1-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2 ^1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.0-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3-beta.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3-pre.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.3-rc2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.2.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x+build.123 <2.x.x+meta-data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x+meta-data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x.x+build || ~2.x.x+meta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^1.x.x+build.123",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^10.2.0-beta.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^10.2.0-beta.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^2 || ^3 || ^4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^2.16.2 ^2.16",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^3.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^9007199254740990.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "^9007199254740991.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "^x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "a",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "a Comparator is required",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "a Range is required",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "a frog",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "a1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "alpha-",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "alpha-1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "alpha.1.1a",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "alpha.beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "alpha.beta.5",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "any object passed is returned",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "anything matches ANY",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "args with equals",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "b",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "bad",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "bad ranges in max satisfying",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "bad ranges in min satisfying",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "basic cache operation",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "blerg",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "cache",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "cached",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "child",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "child_process",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "clean tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "close",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "coerce tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "coercing",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "comparator testing",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "comparators test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "compare main vs pre",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "compareBuild",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "comparison tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "comparisons",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "coverage-map",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "dev",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "dev.baz",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "diff versions test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "error",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "even loose as an opt, same",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "even loose, its still junk",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "export all classes at semver/classes",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "fake",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "false",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "falsey values always empty options object",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "fixtures",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "foo bar baz",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "fs",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "glorp",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "got appropriate data types exported",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "got expected output",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "got no output",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "gtr tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "hello",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "hello, world",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "help output",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "hot/mess",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "inc tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "increment side-effects",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "increment versions test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "integration",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "intersect comparators",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "intersect demands another comparator",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid cmp usage",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid comparator parse throws",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid identifier: invalid/preid",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid increment argument: identifier already exists",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid increment argument: identifier is empty",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid increments",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid version",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "invalid/preid",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "just a normal value property",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "just return it if its a SemVer obj",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "long build id",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "looseness as a boolean",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "looseness as an option",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "ltr tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "major",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "major tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "max satisfying",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "min satisfying",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "minimum version in range tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "minor",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "minor tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "missing comparator parameter in intersect comparators",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "missing range parameter in range intersect",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "new-build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "no signal",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "not a version",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "not a version string",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "obj with a tostring is not a string",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "outside with bad hilo throws",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "parse a version into a SemVer object",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "patch",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "patch tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "path",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "pre",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "preload and index match",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "premajor",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "preminor",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "prepatch",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "prerelease",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "range should be subset of itself in obj or string mode",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "range tests",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "range with whitespace",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "rc",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "rcompare",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "rcompareIdentifiers and compareIdentifiers",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "regexp is not a string",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "regexps are regexps",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "release",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "return the version if a SemVer obj",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "returns null instead of throwing when presented with garbage",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "safe regex do not contain greedy whitespace",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "safe regexps are regexps",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "safe srcare strings",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "semver",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "semver-ish regexp is not a string",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "some frogs and sneks-v2.5.6",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "sorting",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "sorting and filtering",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "src are strings",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "strict vs loose version numbers",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "success exit status",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "tap",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "test covers a file",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "test files should match system files",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "tests match system",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "there are tokens",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "throw errors if asked to",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "throws on bad version",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "throws type error",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "tokens are numbers",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "too big",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "too long",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "tostrings",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "truncate fixture versions test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "truthy non-objects always loose mode, for backwards comp",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "use strict",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "utf-8",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "utf8",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v 1.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v 1.2.3-0",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v 1.2.3-1",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v 1.2.3-beta",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v0.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.0.0-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.0.1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.1.93",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.1.97",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.10.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.5.4-pre",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.9.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.9.9",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v0.99.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.0+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v1.0+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaax6",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.3-0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.3-1",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.3-beta",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.3-foo",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.2.5",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v1.5.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v2.0.0",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v5.2.3",
+      "strictVersion": true,
+      "looseVersion": true,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "v=1.2.34",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v=1.34.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "v=34.2.3",
+      "strictVersion": false,
+      "looseVersion": true,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "valid range test",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "valid versions",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "validate a version into a SemVer object",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "version one",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "wins",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "with env set",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "without env set",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "x - 1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "x - 1.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "x.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "x.1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "x.x.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "x6",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "xyz",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": false
+    },
+    {
+      "s": "||",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    },
+    {
+      "s": "~ 1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~ 1.0.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~ 1.0.3alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "~0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~0.0.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~0.6.1-1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.0.0-alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.0.0alpha",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "~1.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.1.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.1.1 || >=2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.1.1-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.1.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.1 1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.1 1.2.3 >=1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.1 =1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.1 >=1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.1 >=1.2.3 1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.3+",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.3+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.3-beta.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.3beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": false,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.2.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x+meta-data",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x.x+build",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x.x+build >2.x+meta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~1.x.x+build.123",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~2",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~2.0.0",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~2.0.0-alpha.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~2.4",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~2.x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~> 1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~> 1.0.3",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~>1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~>3.2.1",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~v0.5.4-beta",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~v0.5.4-pre",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": true
+    },
+    {
+      "s": "~x",
+      "strictVersion": false,
+      "looseVersion": false,
+      "validRange": true,
+      "coercible": false
+    }
+  ]
+}

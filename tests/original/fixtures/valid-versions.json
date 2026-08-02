@@ -1,0 +1,760 @@
+{
+  "source": "test/fixtures/valid-versions.js",
+  "upstreamSha256": "958aa77d9e3e95ed945230d404916fabec453c584fd037175b9b27f43a05f2aa",
+  "shape": "[version, major, minor, patch, prerelease[], build[]]",
+  "optionsIndex": null,
+  "count": 22,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.0"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 0
+        },
+        {
+          "k": "number",
+          "v": 0
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "2.1.0"
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 0
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "3.2.1"
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "v1.2.3"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-0"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "number",
+              "v": 0
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-123"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "number",
+              "v": 123
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1.2.3"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "number",
+              "v": 1
+            },
+            {
+              "k": "number",
+              "v": 2
+            },
+            {
+              "k": "number",
+              "v": 3
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-1a"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "1a"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-a1"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "a1"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-alpha"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "alpha"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-alpha.1"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "alpha"
+            },
+            {
+              "k": "number",
+              "v": 1
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-alpha-1"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "alpha-1"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-alpha-.-beta"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "alpha-"
+            },
+            {
+              "k": "string",
+              "v": "-beta"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": []
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+456"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "456"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+new-build"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "new-build"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build.1"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            },
+            {
+              "k": "string",
+              "v": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build.1a"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            },
+            {
+              "k": "string",
+              "v": "1a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build.a1"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            },
+            {
+              "k": "string",
+              "v": "a1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build.alpha"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            },
+            {
+              "k": "string",
+              "v": "alpha"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3+build.alpha.beta"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": []
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            },
+            {
+              "k": "string",
+              "v": "alpha"
+            },
+            {
+              "k": "string",
+              "v": "beta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-alpha+build"
+        },
+        {
+          "k": "number",
+          "v": 1
+        },
+        {
+          "k": "number",
+          "v": 2
+        },
+        {
+          "k": "number",
+          "v": 3
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "alpha"
+            }
+          ]
+        },
+        {
+          "k": "array",
+          "v": [
+            {
+              "k": "string",
+              "v": "build"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

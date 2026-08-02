@@ -1,0 +1,439 @@
+{
+  "source": "test/fixtures/truncations.js",
+  "upstreamSha256": "bfbbaf09910b2234a4f8812e63259956aa63a9a8a2ff7ca5980b0fe6a4d085ea",
+  "shape": "[version, releaseType, result]",
+  "optionsIndex": null,
+  "count": 27,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3-foo"
+        },
+        {
+          "k": "string",
+          "v": "patch"
+        },
+        {
+          "k": "string",
+          "v": "1.2.3"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "patch"
+        },
+        {
+          "k": "string",
+          "v": "1.2.3"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "minor"
+        },
+        {
+          "k": "string",
+          "v": "1.2.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "major"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.2.3"
+        },
+        {
+          "k": "string",
+          "v": "fake"
+        },
+        {
+          "k": "null"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "fake"
+        },
+        {
+          "k": "string",
+          "v": "major"
+        },
+        {
+          "k": "null"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "prerelease"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "prepatch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "preminor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "premajor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "patch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "minor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        },
+        {
+          "k": "string",
+          "v": "major"
+        },
+        {
+          "k": "string",
+          "v": "4.0.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "prerelease"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "prepatch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "preminor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "premajor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "patch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "minor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "major"
+        },
+        {
+          "k": "string",
+          "v": "4.0.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "prerelease"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "prepatch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "preminor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "premajor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6-rc2"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "patch"
+        },
+        {
+          "k": "string",
+          "v": "4.5.6"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "minor"
+        },
+        {
+          "k": "string",
+          "v": "4.5.0"
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "4.5.6-rc2+dadb0d"
+        },
+        {
+          "k": "string",
+          "v": "major"
+        },
+        {
+          "k": "string",
+          "v": "4.0.0"
+        }
+      ]
+    }
+  ]
+}

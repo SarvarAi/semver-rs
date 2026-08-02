@@ -1,0 +1,873 @@
+{
+  "source": "test/fixtures/range-intersection.js",
+  "upstreamSha256": "5ef5471db2ced9ec09856e30cb234d9724a83f9fe27a124a137e4af3ea98b08f",
+  "shape": "[r0, r1, expectedIntersection]",
+  "optionsIndex": null,
+  "count": 54,
+  "rows": [
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": ">0.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">0.0.0"
+        },
+        {
+          "k": "string",
+          "v": "<1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": ">1.4.0 <1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": ">1.4.0 <1.6.0 || 2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1.0.0 <=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.0.0 >=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "2.1.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.0.0 >=2.0.0"
+        },
+        {
+          "k": "string",
+          "v": ">1.4.0 <1.6.0 || 2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.5.x"
+        },
+        {
+          "k": "string",
+          "v": "<1.5.0 || >=1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.5.0 || >=1.6.0"
+        },
+        {
+          "k": "string",
+          "v": "1.5.x"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<1.6.16 || >=1.7.0 <1.7.11 || >=1.8.0 <1.8.2"
+        },
+        {
+          "k": "string",
+          "v": ">=1.6.16 <1.7.0 || >=1.7.11 <1.8.0 || >=1.8.2"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "<=1.6.16 || >=1.7.0 <1.7.11 || >=1.8.0 <1.8.2"
+        },
+        {
+          "k": "string",
+          "v": ">=1.6.16 <1.7.0 || >=1.7.11 <1.8.0 || >=1.8.2"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">=1.0.0"
+        },
+        {
+          "k": "string",
+          "v": "<=1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": ">1.0.0 <1.0.0"
+        },
+        {
+          "k": "string",
+          "v": "<=0.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": ">=1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": ">1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "~1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "<1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "<=1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "<2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": ">1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "<=1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "^1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.*"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.*"
+        },
+        {
+          "k": "string",
+          "v": "<0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.*"
+        },
+        {
+          "k": "string",
+          "v": ">0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.*"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": ">=1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": ">1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": "~1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": "<1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": "<=1.6.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "<2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": ">1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "<=1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "^1.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.x"
+        },
+        {
+          "k": "string",
+          "v": "0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.x"
+        },
+        {
+          "k": "string",
+          "v": "<0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": false
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.0.x"
+        },
+        {
+          "k": "string",
+          "v": ">0.0.1"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "1.x"
+        },
+        {
+          "k": "string",
+          "v": "1.3.0 || <1.0.0 >2.0.0"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "string",
+          "v": "*"
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    },
+    {
+      "values": [
+        {
+          "k": "string",
+          "v": "x"
+        },
+        {
+          "k": "string",
+          "v": ""
+        },
+        {
+          "k": "bool",
+          "v": true
+        }
+      ]
+    }
+  ]
+}
