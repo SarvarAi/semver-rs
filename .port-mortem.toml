@@ -1,0 +1,23 @@
+track = "F"                       # JavaScript -> Rust
+source_repo = "https://github.com/npm/node-semver"
+source_commit = "6e05b7637396ac66522cff8731f07cfe0ef49a29"
+source_tag = "v7.8.5"
+source_license = "ISC"
+target_language = "Rust"
+
+# Kickoff baseline, captured before a single line of port code was written.
+kickoff_hash_manifest = "baseline/KICKOFF-HASHES.txt"
+kickoff_files_hashed = 154
+kickoff_tap_log = "baseline/kickoff-tap-output.txt"
+kickoff_assertions_passing = 10471
+kickoff_assertions_failing = 0
+kickoff_test_files = 51
+
+# Measured with cloc v1.72 on the pinned commit, port scope only
+# (classes/ functions/ ranges/ internal/ bin/ index.js preload.js).
+source_loc_code = 2004
+source_loc_files = 49
+test_loc_code = 3007
+test_loc_files = 66
+
+build_command = "cargo build --release"

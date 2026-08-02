@@ -1,0 +1,11 @@
+/target
+Cargo.lock.bak
+
+# The pinned upstream clone. Not vendored into this repo: it is reproduced
+# byte-for-byte by `tools/vendor.sh`, and its integrity is proven by
+# baseline/KICKOFF-HASHES.txt rather than by committing 1.4 MB of ISC code.
+/vendor/
+
+node_modules/
+*.tmp
+.DS_Store

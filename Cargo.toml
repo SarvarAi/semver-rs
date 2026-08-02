@@ -1,0 +1,48 @@
+[package]
+name = "semver-npm"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+license = "ISC"
+description = "A Rust port of npm/node-semver — npm's semantic version and version-range dialect"
+repository = "https://github.com/SarvarAi/semver-rs"
+readme = "README.md"
+
+[lib]
+name = "semver_npm"
+path = "src/lib.rs"
+
+# ---------------------------------------------------------------------------
+# The SHIPPED PORT. `cargo build --release` builds exactly the lib + this bin.
+# Neither links, embeds, nor shells out to Node/V8 — see README "Separation".
+# ---------------------------------------------------------------------------
+[[bin]]
+name = "semver"
+path = "src/bin/semver.rs"
+
+# ---------------------------------------------------------------------------
+# DEV-TIME DIFFERENTIAL HARNESS ONLY. Feature-gated so a default release build
+# provably cannot include it. Built with:
+#     cargo build --release --features harness
+# ---------------------------------------------------------------------------
+[[bin]]
+name = "semver-probe"
+path = "src/bin/semver-probe.rs"
+required-features = ["harness"]
+
+[dependencies]
+regex = "1"
+serde_json = { version = "1", optional = true }
+
+[dev-dependencies]
+serde_json = "1"
+
+[features]
+default = []
+harness = ["dep:serde_json"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
