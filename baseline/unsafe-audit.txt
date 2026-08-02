@@ -1,0 +1,55 @@
+# unsafe audit — semver-rs
+# generated: 2026-08-02T18:53:32Z
+# method: (1) crate-level lint, (2) textual grep, (3) manual review of dependencies
+
+## 1. Crate-level lint
+src/lib.rs declares:
+    15:#![forbid(unsafe_code)]
+This is a hard compiler error, not a warning: any unsafe block in this crate
+fails the build. The build succeeds, therefore the count is zero.
+
+## 2. Textual grep over all first-party Rust source
+$ grep -rn 'unsafe' src/ tests/
+src/lib.rs:10://! The port contains no `unsafe`, and neither links nor invokes Node. The
+src/lib.rs:15:#![forbid(unsafe_code)]
+
+## 3. Files scanned
+    src/bin/semver-bench.rs
+    src/bin/semver-probe.rs
+    src/bin/semver.rs
+    src/comparator.rs
+    src/constants.rs
+    src/functions.rs
+    src/identifiers.rs
+    src/lib.rs
+    src/lrucache.rs
+    src/options.rs
+    src/probe_dispatch.rs
+    src/range.rs
+    src/ranges.rs
+    src/re.rs
+    src/semver.rs
+    src/subset.rs
+    src/util.rs
+    tests/golden_parity.rs
+    tests/re_table.rs
+
+## 4. Dependencies
+The shipped port depends on exactly one crate:
+    regex 1.x  (+ its own tree: regex-automata, regex-syntax, aho-corasick, memchr)
+serde_json is optional and used only by the dev-time harness and tests.
+Those crates do contain unsafe internally; this audit covers first-party code.
+Dependency tree:
+    semver-npm v0.1.0 (/Users/sarvar/Desktop/semver-rs)
+    └── regex v1.13.1
+        ├── aho-corasick v1.1.4
+        │   └── memchr v2.8.3
+        ├── memchr v2.8.3
+        ├── regex-automata v0.4.16
+        │   ├── aho-corasick v1.1.4 (*)
+        │   ├── memchr v2.8.3
+        │   └── regex-syntax v0.8.11
+        └── regex-syntax v0.8.11
+
+## Result
+unsafe blocks in first-party code: 0  (measured, not assumed)

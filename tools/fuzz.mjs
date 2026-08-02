@@ -291,9 +291,12 @@ w(`agreements   ${agreements}`)
 w(`divergences  ${divergences}`)
 w(`result       ${divergences === 0 ? 'CLEAN — no divergence found' : 'DIVERGENCES FOUND (see above)'}`)
 w('='.repeat(78))
-log.end()
+// Wait for the log stream to flush before exiting: `process.exit()` on a
+// pending write truncates the file, which silently ate the summary block on an
+// earlier run.
+await new Promise((resolve) => log.end(resolve))
 
 process.stderr.write('\n')
 process.stdout.write(`fuzz complete: ${totalCalls} calls in ${wall}s, ${divergences} divergences\n`)
 process.stdout.write(`log: ${path.relative(ROOT, LOG)}\n`)
-process.exit(divergences === 0 ? 0 : 1)
+process.exitCode = divergences === 0 ? 0 : 1
