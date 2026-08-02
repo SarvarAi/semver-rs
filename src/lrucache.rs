@@ -1,54 +1,64 @@
 //! Port of `internal/lrucache.js`.
 //!
 //! Upstream leans on JavaScript `Map`'s insertion-order iteration: `get` deletes
-//! and re-inserts to move a key to the end, and eviction pops the first key.
-//! `IndexMap`-style ordering is not in std, so this keeps a `HashMap` for lookup
-//! alongside a `VecDeque` recording recency.
+//! and re-inserts to move a key to the most-recent end, and eviction pops the
+//! first key. std has no insertion-ordered map, so recency is tracked with a
+//! monotonic tick and a `BTreeMap` from tick to key — `get`, `set` and eviction
+//! are all O(log n), matching the O(1)-ish behaviour upstream gets from `Map`.
 //!
-//! This exists because `Range::parse_range` is a hot, fully deterministic path
-//! that upstream memoizes; dropping the cache would change the benchmark story
-//! without changing behaviour.
+//! An earlier version scanned a `VecDeque` to find the key on every `get`, which
+//! is O(n) with n up to 1000. That showed up plainly in the `range_parse`
+//! benchmark as the port losing to Node, and is why the benchmark exists.
 
-use std::collections::{HashMap, VecDeque};
+use std::collections::{BTreeMap, HashMap};
 
 pub struct LruCache<V> {
     max: usize,
-    map: HashMap<String, V>,
-    order: VecDeque<String>,
+    map: HashMap<String, (V, u64)>,
+    /// recency tick -> key, so the least-recently-used entry is `first`.
+    order: BTreeMap<u64, String>,
+    tick: u64,
 }
 
 impl<V: Clone> LruCache<V> {
     pub fn new() -> Self {
-        Self { max: 1000, map: HashMap::new(), order: VecDeque::new() }
+        Self { max: 1000, map: HashMap::new(), order: BTreeMap::new(), tick: 0 }
     }
 
     pub fn get(&mut self, key: &str) -> Option<V> {
-        let value = self.map.get(key)?.clone();
-        // Move to the most-recently-used end.
-        if let Some(pos) = self.order.iter().position(|k| k == key) {
-            self.order.remove(pos);
+        let (value, old_tick) = self.map.get(key)?;
+        let value = value.clone();
+        let old_tick = *old_tick;
+
+        self.tick += 1;
+        let new_tick = self.tick;
+        self.order.remove(&old_tick);
+        self.order.insert(new_tick, key.to_string());
+        if let Some(slot) = self.map.get_mut(key) {
+            slot.1 = new_tick;
         }
-        self.order.push_back(key.to_string());
         Some(value)
     }
 
     pub fn set(&mut self, key: String, value: V) {
-        let existed = self.map.remove(&key).is_some();
-        if existed {
-            if let Some(pos) = self.order.iter().position(|k| *k == key) {
-                self.order.remove(pos);
-            }
-            // Upstream returns early on an existing key: `set` on a key that was
-            // already present deletes it and does NOT re-insert.
+        // Faithful to upstream: `set` deletes first, and only re-inserts when
+        // the key was absent. Setting an existing key therefore removes it.
+        if let Some((_, old_tick)) = self.map.remove(&key) {
+            self.order.remove(&old_tick);
             return;
         }
+
         if self.map.len() >= self.max {
-            if let Some(oldest) = self.order.pop_front() {
-                self.map.remove(&oldest);
+            if let Some((&oldest_tick, oldest_key)) = self.order.iter().next() {
+                let oldest_key = oldest_key.clone();
+                self.order.remove(&oldest_tick);
+                self.map.remove(&oldest_key);
             }
         }
-        self.order.push_back(key.clone());
-        self.map.insert(key, value);
+
+        self.tick += 1;
+        self.order.insert(self.tick, key.clone());
+        self.map.insert(key, (value, self.tick));
     }
 }
 
@@ -83,5 +93,15 @@ mod tests {
         c.set("a".into(), 1);
         c.set("a".into(), 2);
         assert_eq!(c.get("a"), None);
+    }
+
+    #[test]
+    fn stays_within_its_bound() {
+        let mut c: LruCache<u32> = LruCache::new();
+        for i in 0..5000u32 {
+            c.set(format!("k{i}"), i);
+        }
+        assert_eq!(c.map.len(), 1000);
+        assert_eq!(c.order.len(), 1000);
     }
 }

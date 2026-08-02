@@ -18,6 +18,10 @@ use semver_npm::semver::IdentifierBase;
 use semver_npm::{functions as f, options::Options, range::Range, ranges as r, semver::SemVer};
 
 // Marker the differ recognises as "not ported yet" rather than a divergence.
+// Currently unused because the whole API is ported; kept because it is part of
+// the harness protocol that tools/diff-results.mjs understands, and deleting it
+// would quietly remove the ability to report a gap honestly.
+#[allow(dead_code)]
 const UNIMPLEMENTED: &str = "__UNIMPLEMENTED__";
 
 /// Emit integral floats as JSON integers so `1` does not compare unequal to

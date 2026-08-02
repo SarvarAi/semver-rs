@@ -46,6 +46,13 @@ fn main() -> io::Result<()> {
             Ok(Err(msg)) => json!({"id": id, "ok": false, "e": msg}),
             Err(_) => json!({"id": id, "ok": false, "e": "__PANIC__"}),
         };
+        // Escape U+2028/U+2029: Node's readline treats them as line
+        // terminators, so leaving them raw would split a JSONL record and lose
+        // the result. The escaped form denotes the same string.
+        let line = line
+            .to_string()
+            .replace('\u{2028}', "\\u2028")
+            .replace('\u{2029}', "\\u2029");
         writeln!(out, "{line}")?;
     }
     out.flush()

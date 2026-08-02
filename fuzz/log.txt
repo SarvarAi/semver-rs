@@ -1,0 +1,261 @@
+==============================================================================
+differential fuzz: npm/node-semver v7.8.5 (6e05b763) vs semver-rs port
+started      2026-08-02T18:42:34.730Z
+seed         20260803
+batch size   40000
+target time  120s
+node         v24.18.1
+probe        /Users/sarvar/Desktop/semver-rs/target/release/semver-probe
+==============================================================================
+round   1  t=   0.7s  calls=    40000  divergences=0
+round   2  t=   1.2s  calls=    80000  divergences=0
+round   3  t=   1.7s  calls=   120000  divergences=0
+round   4  t=   2.2s  calls=   160000  divergences=0
+round   5  t=   2.6s  calls=   200000  divergences=0
+round   6  t=   3.0s  calls=   240000  divergences=0
+round   7  t=   3.5s  calls=   280000  divergences=0
+round   8  t=   4.0s  calls=   320000  divergences=0
+round   9  t=   4.6s  calls=   360000  divergences=0
+round  10  t=   5.0s  calls=   400000  divergences=0
+round  11  t=   5.5s  calls=   440000  divergences=0
+round  12  t=   6.0s  calls=   480000  divergences=0
+round  13  t=   6.5s  calls=   520000  divergences=0
+round  14  t=   7.0s  calls=   560000  divergences=0
+round  15  t=   7.6s  calls=   600000  divergences=0
+round  16  t=   8.0s  calls=   640000  divergences=0
+round  17  t=   8.5s  calls=   680000  divergences=0
+round  18  t=   8.9s  calls=   720000  divergences=0
+round  19  t=   9.3s  calls=   760000  divergences=0
+round  20  t=   9.8s  calls=   800000  divergences=0
+round  21  t=  10.2s  calls=   840000  divergences=0
+round  22  t=  10.7s  calls=   880000  divergences=0
+round  23  t=  11.2s  calls=   920000  divergences=0
+round  24  t=  11.6s  calls=   960000  divergences=0
+round  25  t=  12.0s  calls=  1000000  divergences=0
+round  26  t=  12.5s  calls=  1040000  divergences=0
+round  27  t=  12.9s  calls=  1080000  divergences=0
+round  28  t=  13.4s  calls=  1120000  divergences=0
+round  29  t=  13.8s  calls=  1160000  divergences=0
+round  30  t=  14.3s  calls=  1200000  divergences=0
+round  31  t=  14.7s  calls=  1240000  divergences=0
+round  32  t=  15.2s  calls=  1280000  divergences=0
+round  33  t=  15.6s  calls=  1320000  divergences=0
+round  34  t=  16.0s  calls=  1360000  divergences=0
+round  35  t=  16.5s  calls=  1400000  divergences=0
+round  36  t=  17.0s  calls=  1440000  divergences=0
+round  37  t=  17.4s  calls=  1480000  divergences=0
+round  38  t=  17.9s  calls=  1520000  divergences=0
+round  39  t=  18.3s  calls=  1560000  divergences=0
+round  40  t=  18.8s  calls=  1600000  divergences=0
+round  41  t=  19.2s  calls=  1640000  divergences=0
+round  42  t=  19.6s  calls=  1680000  divergences=0
+round  43  t=  20.1s  calls=  1720000  divergences=0
+round  44  t=  20.5s  calls=  1760000  divergences=0
+round  45  t=  21.0s  calls=  1800000  divergences=0
+round  46  t=  21.4s  calls=  1840000  divergences=0
+round  47  t=  21.9s  calls=  1880000  divergences=0
+round  48  t=  22.3s  calls=  1920000  divergences=0
+round  49  t=  22.7s  calls=  1960000  divergences=0
+round  50  t=  23.2s  calls=  2000000  divergences=0
+round  51  t=  23.6s  calls=  2040000  divergences=0
+round  52  t=  24.0s  calls=  2080000  divergences=0
+round  53  t=  24.5s  calls=  2120000  divergences=0
+round  54  t=  24.9s  calls=  2160000  divergences=0
+round  55  t=  25.3s  calls=  2200000  divergences=0
+round  56  t=  26.3s  calls=  2240000  divergences=0
+round  57  t=  27.0s  calls=  2280000  divergences=0
+round  58  t=  27.4s  calls=  2320000  divergences=0
+round  59  t=  27.9s  calls=  2360000  divergences=0
+round  60  t=  28.3s  calls=  2400000  divergences=0
+round  61  t=  28.8s  calls=  2440000  divergences=0
+round  62  t=  29.2s  calls=  2480000  divergences=0
+round  63  t=  29.8s  calls=  2520000  divergences=0
+round  64  t=  30.3s  calls=  2560000  divergences=0
+round  65  t=  30.8s  calls=  2600000  divergences=0
+round  66  t=  31.3s  calls=  2640000  divergences=0
+round  67  t=  31.7s  calls=  2680000  divergences=0
+round  68  t=  32.2s  calls=  2720000  divergences=0
+
+DIVERGENCE #1  round 69  2026-08-02T18:43:07.347Z
+  call : {"fn":"outside","a":["9007199254740991.0.009007199254740991.0.009007199254740991.0.00","10.007.9007199254740990",">",{"loose":true,"includePrerelease":true}]}
+  node : {"threw":"Invalid Version: 9007199254740991.0.900719925474099-1.0.009007199254740991.0.0"}
+  rust : {"ok":true}
+  repro: node tools/fuzz.mjs --seed 20260803 --seconds 5
+
+DIVERGENCE #2  round 69  2026-08-02T18:43:07.349Z
+  call : {"fn":"ltr","a":["9007199254740991.9007199254740990.09007199254740991.9007199254740990.09007199254740991.9007199254740990.0","v00.00.9007199254740991-beta -  10.9007199254740991.0-x.007+alpha.9007199254740994\u000b",{"loose":true,"includePrerelease":false}]}
+  node : {"threw":"Invalid Version: 9007199254740991.9007199254740990.900719925474099-1.9007199254740990.09007199254740991.9007199254740990.0"}
+  rust : {"ok":false}
+  repro: node tools/fuzz.mjs --seed 20260803 --seconds 5
+round  69  t=  32.6s  calls=  2760000  divergences=2
+round  70  t=  33.1s  calls=  2800000  divergences=2
+round  71  t=  33.5s  calls=  2840000  divergences=2
+round  72  t=  34.0s  calls=  2880000  divergences=2
+round  73  t=  34.5s  calls=  2920000  divergences=2
+round  74  t=  34.9s  calls=  2960000  divergences=2
+round  75  t=  35.4s  calls=  3000000  divergences=2
+round  76  t=  35.8s  calls=  3040000  divergences=2
+round  77  t=  36.3s  calls=  3080000  divergences=2
+round  78  t=  36.7s  calls=  3120000  divergences=2
+round  79  t=  37.2s  calls=  3160000  divergences=2
+round  80  t=  37.6s  calls=  3200000  divergences=2
+round  81  t=  38.0s  calls=  3240000  divergences=2
+round  82  t=  38.5s  calls=  3280000  divergences=2
+round  83  t=  38.9s  calls=  3320000  divergences=2
+round  84  t=  39.4s  calls=  3360000  divergences=2
+round  85  t=  39.9s  calls=  3400000  divergences=2
+round  86  t=  40.3s  calls=  3440000  divergences=2
+round  87  t=  40.7s  calls=  3480000  divergences=2
+round  88  t=  41.2s  calls=  3520000  divergences=2
+round  89  t=  41.6s  calls=  3560000  divergences=2
+round  90  t=  42.1s  calls=  3600000  divergences=2
+round  91  t=  42.5s  calls=  3640000  divergences=2
+round  92  t=  42.9s  calls=  3680000  divergences=2
+round  93  t=  43.5s  calls=  3720000  divergences=2
+round  94  t=  43.9s  calls=  3760000  divergences=2
+round  95  t=  44.4s  calls=  3800000  divergences=2
+round  96  t=  44.9s  calls=  3840000  divergences=2
+round  97  t=  45.4s  calls=  3880000  divergences=2
+round  98  t=  45.8s  calls=  3920000  divergences=2
+round  99  t=  46.3s  calls=  3960000  divergences=2
+round 100  t=  46.7s  calls=  4000000  divergences=2
+round 101  t=  47.1s  calls=  4040000  divergences=2
+round 102  t=  47.6s  calls=  4080000  divergences=2
+round 103  t=  48.1s  calls=  4120000  divergences=2
+round 104  t=  48.5s  calls=  4160000  divergences=2
+round 105  t=  49.0s  calls=  4200000  divergences=2
+round 106  t=  50.2s  calls=  4240000  divergences=2
+round 107  t=  50.8s  calls=  4280000  divergences=2
+round 108  t=  51.3s  calls=  4320000  divergences=2
+round 109  t=  51.7s  calls=  4360000  divergences=2
+round 110  t=  52.2s  calls=  4400000  divergences=2
+round 111  t=  52.6s  calls=  4440000  divergences=2
+round 112  t=  53.0s  calls=  4480000  divergences=2
+round 113  t=  53.5s  calls=  4520000  divergences=2
+round 114  t=  54.0s  calls=  4560000  divergences=2
+round 115  t=  54.4s  calls=  4600000  divergences=2
+round 116  t=  54.9s  calls=  4640000  divergences=2
+round 117  t=  55.3s  calls=  4680000  divergences=2
+round 118  t=  55.8s  calls=  4720000  divergences=2
+round 119  t=  56.2s  calls=  4760000  divergences=2
+round 120  t=  56.6s  calls=  4800000  divergences=2
+round 121  t=  57.1s  calls=  4840000  divergences=2
+round 122  t=  57.5s  calls=  4880000  divergences=2
+round 123  t=  58.0s  calls=  4920000  divergences=2
+round 124  t=  58.4s  calls=  4960000  divergences=2
+round 125  t=  58.9s  calls=  5000000  divergences=2
+round 126  t=  59.3s  calls=  5040000  divergences=2
+round 127  t=  59.7s  calls=  5080000  divergences=2
+round 128  t=  60.2s  calls=  5120000  divergences=2
+round 129  t=  60.6s  calls=  5160000  divergences=2
+round 130  t=  61.1s  calls=  5200000  divergences=2
+round 131  t=  61.5s  calls=  5240000  divergences=2
+round 132  t=  62.0s  calls=  5280000  divergences=2
+round 133  t=  62.4s  calls=  5320000  divergences=2
+round 134  t=  62.8s  calls=  5360000  divergences=2
+round 135  t=  63.3s  calls=  5400000  divergences=2
+round 136  t=  63.8s  calls=  5440000  divergences=2
+round 137  t=  64.2s  calls=  5480000  divergences=2
+
+DIVERGENCE #3  round 138  2026-08-02T18:43:39.364Z
+  call : {"fn":"gtr","a":["9007199254740991.007.0079007199254740991.007.0079007199254740991.007.007","1.2.3beta",{"loose":true,"includePrerelease":false}]}
+  node : {"threw":"Invalid Version: 9007199254740991.7.7900719925474099-1.7.0079007199254740991.7.7"}
+  rust : {"ok":true}
+  repro: node tools/fuzz.mjs --seed 20260803 --seconds 5
+round 138  t=  64.6s  calls=  5520000  divergences=3
+round 139  t=  65.1s  calls=  5560000  divergences=3
+round 140  t=  65.5s  calls=  5600000  divergences=3
+round 141  t=  65.9s  calls=  5640000  divergences=3
+round 142  t=  66.4s  calls=  5680000  divergences=3
+round 143  t=  66.8s  calls=  5720000  divergences=3
+round 144  t=  67.2s  calls=  5760000  divergences=3
+round 145  t=  67.8s  calls=  5800000  divergences=3
+round 146  t=  68.5s  calls=  5840000  divergences=3
+round 147  t=  69.1s  calls=  5880000  divergences=3
+round 148  t=  69.6s  calls=  5920000  divergences=3
+round 149  t=  70.0s  calls=  5960000  divergences=3
+round 150  t=  70.5s  calls=  6000000  divergences=3
+round 151  t=  70.9s  calls=  6040000  divergences=3
+round 152  t=  71.4s  calls=  6080000  divergences=3
+round 153  t=  71.8s  calls=  6120000  divergences=3
+round 154  t=  72.3s  calls=  6160000  divergences=3
+round 155  t=  72.7s  calls=  6200000  divergences=3
+round 156  t=  73.2s  calls=  6240000  divergences=3
+round 157  t=  73.6s  calls=  6280000  divergences=3
+round 158  t=  74.1s  calls=  6320000  divergences=3
+round 159  t=  74.5s  calls=  6360000  divergences=3
+round 160  t=  75.0s  calls=  6400000  divergences=3
+round 161  t=  75.4s  calls=  6440000  divergences=3
+round 162  t=  75.8s  calls=  6480000  divergences=3
+round 163  t=  76.3s  calls=  6520000  divergences=3
+round 164  t=  76.8s  calls=  6560000  divergences=3
+round 165  t=  77.2s  calls=  6600000  divergences=3
+round 166  t=  77.7s  calls=  6640000  divergences=3
+round 167  t=  78.2s  calls=  6680000  divergences=3
+round 168  t=  78.9s  calls=  6720000  divergences=3
+round 169  t=  79.5s  calls=  6760000  divergences=3
+round 170  t=  80.1s  calls=  6800000  divergences=3
+round 171  t=  80.6s  calls=  6840000  divergences=3
+round 172  t=  81.3s  calls=  6880000  divergences=3
+round 173  t=  81.8s  calls=  6920000  divergences=3
+round 174  t=  82.3s  calls=  6960000  divergences=3
+round 175  t=  82.8s  calls=  7000000  divergences=3
+round 176  t=  83.2s  calls=  7040000  divergences=3
+round 177  t=  83.7s  calls=  7080000  divergences=3
+round 178  t=  84.2s  calls=  7120000  divergences=3
+round 179  t=  84.7s  calls=  7160000  divergences=3
+round 180  t=  85.1s  calls=  7200000  divergences=3
+round 181  t=  85.6s  calls=  7240000  divergences=3
+round 182  t=  86.1s  calls=  7280000  divergences=3
+round 183  t=  86.7s  calls=  7320000  divergences=3
+round 184  t=  87.2s  calls=  7360000  divergences=3
+round 185  t=  87.7s  calls=  7400000  divergences=3
+round 186  t=  88.2s  calls=  7440000  divergences=3
+round 187  t=  88.7s  calls=  7480000  divergences=3
+round 188  t=  89.2s  calls=  7520000  divergences=3
+round 189  t=  89.7s  calls=  7560000  divergences=3
+round 190  t=  90.2s  calls=  7600000  divergences=3
+round 191  t=  90.7s  calls=  7640000  divergences=3
+round 192  t=  91.2s  calls=  7680000  divergences=3
+round 193  t=  91.7s  calls=  7720000  divergences=3
+round 194  t=  92.2s  calls=  7760000  divergences=3
+round 195  t=  92.7s  calls=  7800000  divergences=3
+round 196  t=  93.2s  calls=  7840000  divergences=3
+round 197  t=  93.7s  calls=  7880000  divergences=3
+round 198  t=  94.3s  calls=  7920000  divergences=3
+round 199  t=  95.7s  calls=  7960000  divergences=3
+round 200  t=  96.4s  calls=  8000000  divergences=3
+round 201  t=  97.2s  calls=  8040000  divergences=3
+round 202  t=  97.9s  calls=  8080000  divergences=3
+round 203  t=  98.7s  calls=  8120000  divergences=3
+round 204  t=  99.4s  calls=  8160000  divergences=3
+round 205  t= 100.0s  calls=  8200000  divergences=3
+round 206  t= 100.7s  calls=  8240000  divergences=3
+round 207  t= 101.3s  calls=  8280000  divergences=3
+round 208  t= 102.0s  calls=  8320000  divergences=3
+round 209  t= 102.7s  calls=  8360000  divergences=3
+round 210  t= 103.4s  calls=  8400000  divergences=3
+round 211  t= 104.2s  calls=  8440000  divergences=3
+round 212  t= 105.0s  calls=  8480000  divergences=3
+round 213  t= 105.9s  calls=  8520000  divergences=3
+round 214  t= 106.7s  calls=  8560000  divergences=3
+round 215  t= 107.4s  calls=  8600000  divergences=3
+round 216  t= 108.3s  calls=  8640000  divergences=3
+round 217  t= 108.8s  calls=  8680000  divergences=3
+round 218  t= 109.4s  calls=  8720000  divergences=3
+round 219  t= 110.0s  calls=  8760000  divergences=3
+round 220  t= 110.6s  calls=  8800000  divergences=3
+round 221  t= 111.6s  calls=  8840000  divergences=3
+round 222  t= 113.2s  calls=  8880000  divergences=3
+round 223  t= 115.8s  calls=  8920000  divergences=3
+
+DIVERGENCE #4  round 224  2026-08-02T18:44:31.382Z
+  call : {"fn":"outside","a":["\fv00.0.1-rc\u2028","9007199254740991.7.009007199254740991.7.009007199254740991.7.00",">",{"loose":true,"includePrerelease":false}]}
+  node : {"threw":"Invalid Version: 9007199254740991.7.900719925474099-1.7.009007199254740991.7.0"}
+  rust : {"ok":false}
+  repro: node tools/fuzz.mjs --seed 20260803 --seconds 5
+round 224  t= 116.6s  calls=  8960000  divergences=4
+round 225  t= 117.4s  calls=  9000000  divergences=4
+round 226  t= 118.1s  calls=  9040000  divergences=4
+round 227  t= 118.9s  calls=  9080000  divergences=4
+round 228  t= 120.1s  calls=  9120000  divergences=4

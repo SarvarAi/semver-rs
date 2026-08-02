@@ -30,6 +30,11 @@ name = "semver-probe"
 path = "src/bin/semver-probe.rs"
 required-features = ["harness"]
 
+[[bin]]
+name = "semver-bench"
+path = "src/bin/semver-bench.rs"
+required-features = ["harness"]
+
 [dependencies]
 regex = "1"
 serde_json = { version = "1", optional = true }

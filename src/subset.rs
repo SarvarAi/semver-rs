@@ -20,7 +20,7 @@
 use crate::comparator::Comparator;
 use crate::options::Options;
 use crate::range::Range;
-use crate::semver::SemVer;
+use crate::semver::{compare_with, SemVer};
 use crate::Result;
 
 /// Port of `subset()`.
@@ -108,8 +108,8 @@ fn simple_subset(
     let mut lt: Option<&Comparator> = None;
     for c in sub {
         match c.operator.as_str() {
-            ">" | ">=" => gt = Some(higher_gt(gt, c)),
-            "<" | "<=" => lt = Some(lower_lt(lt, c)),
+            ">" | ">=" => gt = Some(higher_gt(gt, c, options)?),
+            "<" | "<=" => lt = Some(lower_lt(lt, c, options)?),
             _ => {
                 if let Some(sv) = &c.semver {
                     eq_set.push(sv);
@@ -128,7 +128,7 @@ fn simple_subset(
         let (Some(gs), Some(ls)) = (&g.semver, &l.semver) else {
             return Ok(None);
         };
-        let c = gs.compare(ls);
+        let c = compare_with(gs, ls, options)?;
         gtlt_comp = Some(c);
         if c > 0 {
             return Ok(None);
@@ -141,17 +141,17 @@ fn simple_subset(
     // Iterates once or not at all.
     if let Some(eq) = eq_set.first() {
         if let Some(g) = gt {
-            if !Range::new(&g.value, options)?.test(eq) {
+            if !Range::new(&g.value, options)?.test(eq)? {
                 return Ok(None);
             }
         }
         if let Some(l) = lt {
-            if !Range::new(&l.value, options)?.test(eq) {
+            if !Range::new(&l.value, options)?.test(eq)? {
                 return Ok(None);
             }
         }
         for c in dom {
-            if !Range::new(&c.value, options)?.test(eq) {
+            if !Range::new(&c.value, options)?.test(eq)? {
                 return Ok(Some(false));
             }
         }
@@ -200,12 +200,12 @@ fn simple_subset(
             if c.operator == ">" || c.operator == ">=" {
                 // `higher === c && higher !== gt` — i.e. the dominator's lower
                 // bound is strictly higher, so sub escapes below it.
-                if higher_gt_picks_b(Some(g), c) {
+                if higher_gt_picks_b(Some(g), c, options)? {
                     return Ok(Some(false));
                 }
             } else if g.operator == ">=" {
                 if let Some(gs) = &g.semver {
-                    if !c.test(gs) {
+                    if !c.test(gs)? {
                         return Ok(Some(false));
                     }
                 }
@@ -225,12 +225,12 @@ fn simple_subset(
                 }
             }
             if c.operator == "<" || c.operator == "<=" {
-                if lower_lt_picks_b(Some(l), c) {
+                if lower_lt_picks_b(Some(l), c, options)? {
                     return Ok(Some(false));
                 }
             } else if l.operator == "<=" {
                 if let Some(ls) = &l.semver {
-                    if !c.test(ls) {
+                    if !c.test(ls)? {
                         return Ok(Some(false));
                     }
                 }
@@ -263,49 +263,68 @@ fn simple_subset(
 }
 
 /// Does `higherGT(a, b)` pick `b`? `>=1.2.3` is lower than `>1.2.3`.
-fn higher_gt_picks_b(a: Option<&Comparator>, b: &Comparator) -> bool {
-    let Some(a) = a else { return true };
+///
+/// Fallible because upstream reaches `compare(a.semver, b.semver, options)`,
+/// which re-parses both operands under `options` and can throw.
+fn higher_gt_picks_b(
+    a: Option<&Comparator>,
+    b: &Comparator,
+    options: Options,
+) -> Result<bool> {
+    let Some(a) = a else { return Ok(true) };
     let (Some(av), Some(bv)) = (&a.semver, &b.semver) else {
-        return false;
+        return Ok(false);
     };
-    let comp = av.compare(bv);
-    if comp > 0 {
+    let comp = compare_with(av, bv, options)?;
+    Ok(if comp > 0 {
         false
     } else if comp < 0 {
         true
     } else {
         b.operator == ">" && a.operator == ">="
-    }
+    })
 }
 
-fn higher_gt<'a>(a: Option<&'a Comparator>, b: &'a Comparator) -> &'a Comparator {
-    if higher_gt_picks_b(a, b) {
+fn higher_gt<'a>(
+    a: Option<&'a Comparator>,
+    b: &'a Comparator,
+    options: Options,
+) -> Result<&'a Comparator> {
+    Ok(if higher_gt_picks_b(a, b, options)? {
         b
     } else {
         a.expect("picks_b is true when a is None")
-    }
+    })
 }
 
 /// Does `lowerLT(a, b)` pick `b`? `<=1.2.3` is higher than `<1.2.3`.
-fn lower_lt_picks_b(a: Option<&Comparator>, b: &Comparator) -> bool {
-    let Some(a) = a else { return true };
+fn lower_lt_picks_b(
+    a: Option<&Comparator>,
+    b: &Comparator,
+    options: Options,
+) -> Result<bool> {
+    let Some(a) = a else { return Ok(true) };
     let (Some(av), Some(bv)) = (&a.semver, &b.semver) else {
-        return false;
+        return Ok(false);
     };
-    let comp = av.compare(bv);
-    if comp < 0 {
+    let comp = compare_with(av, bv, options)?;
+    Ok(if comp < 0 {
         false
     } else if comp > 0 {
         true
     } else {
         b.operator == "<" && a.operator == "<="
-    }
+    })
 }
 
-fn lower_lt<'a>(a: Option<&'a Comparator>, b: &'a Comparator) -> &'a Comparator {
-    if lower_lt_picks_b(a, b) {
+fn lower_lt<'a>(
+    a: Option<&'a Comparator>,
+    b: &'a Comparator,
+    options: Options,
+) -> Result<&'a Comparator> {
+    Ok(if lower_lt_picks_b(a, b, options)? {
         b
     } else {
         a.expect("picks_b is true when a is None")
-    }
+    })
 }

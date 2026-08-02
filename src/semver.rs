@@ -39,7 +39,11 @@ impl SemVer {
     pub fn new(version: &str, options: impl Into<Options>) -> Result<Self> {
         let options = options.into();
 
-        if version.chars().count() > MAX_LENGTH {
+        // Upstream tests `version.length`, which is UTF-16 code units — not
+        // code points, so `chars().count()` would diverge on astral characters.
+        // UTF-16 length never exceeds UTF-8 byte length, so the cheap byte check
+        // short-circuits the common case without changing the answer.
+        if version.len() > MAX_LENGTH && version.encode_utf16().count() > MAX_LENGTH {
             return Err(Error::new(format!(
                 "version is longer than {MAX_LENGTH} characters"
             )));
@@ -128,6 +132,23 @@ impl SemVer {
         }
         self.version = v;
         &self.version
+    }
+
+    /// Port of the *instance* branch of `new SemVer(value, options)`.
+    ///
+    /// Upstream returns the very same object when both flags already match,
+    /// and otherwise re-parses from `.version` — and that re-parse can throw.
+    /// `minVersion` is where this bites: it builds `0.0.0` with default options,
+    /// bumps a patch past MAX_SAFE_INTEGER, then tests it against a range
+    /// carrying `loose`/`includePrerelease`, and the mismatch forces a re-parse
+    /// that rejects the now-oversized component. A port that passed references
+    /// around would silently return a version upstream refuses to produce.
+    pub fn with_options(&self, options: Options) -> Result<std::borrow::Cow<'_, SemVer>> {
+        if self.loose == options.loose && self.include_prerelease == options.include_prerelease {
+            Ok(std::borrow::Cow::Borrowed(self))
+        } else {
+            SemVer::new(&self.version, options).map(std::borrow::Cow::Owned)
+        }
     }
 
     /// Port of `compare(other)`.
@@ -417,6 +438,23 @@ impl Ord for SemVer {
             1..=i32::MAX => Ordering::Greater,
         }
     }
+}
+
+/// Port of `compare(a, b, options)` for two already-parsed versions.
+///
+/// Upstream's `compare` calls `new SemVer(x, options)` on *both* operands, and
+/// that constructor re-parses whenever the operand's flags differ from the
+/// requested ones — which can throw. Call sites that pass SemVer objects around
+/// must go through here rather than `SemVer::compare` directly, or they will
+/// miss errors upstream raises.
+///
+/// Note several upstream call sites (notably inside `outside`) omit the options
+/// argument entirely, which means *strict*. Those must pass `Options::new()`
+/// here, not the ambient options.
+pub fn compare_with(a: &SemVer, b: &SemVer, options: Options) -> Result<i32> {
+    let x = a.with_options(options)?;
+    let y = b.with_options(options)?;
+    Ok(x.compare(&y))
 }
 
 /// Walks two identifier lists the way upstream's `do { } while (++i)` loops do:

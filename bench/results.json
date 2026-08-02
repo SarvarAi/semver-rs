@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-08-02T18:52:42.486Z",
+  "machine": {
+    "platform": "darwin 25.5.0",
+    "arch": "arm64",
+    "cpu": "Apple M3",
+    "cores": 8,
+    "memoryGB": 8
+  },
+  "toolchain": {
+    "node": "v24.18.1",
+    "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "rustProfile": "release (opt-level=3, lto=true, codegen-units=1)"
+  },
+  "upstream": "npm/node-semver 6e05b7637396ac66522cff8731f07cfe0ef49a29 (v7.8.5)",
+  "config": {
+    "iterations": 60,
+    "warmup": 5,
+    "coldRuns": 20
+  },
+  "note": "All timings in milliseconds. See bench/methodology.md for confounders.",
+  "coldStart": {
+    "command": "semver -r ^1.2.3 1.4.0",
+    "node": {
+      "min": 29.3764,
+      "p50": 30.6345,
+      "p90": 31.8173,
+      "p99": 33.7557,
+      "mean": 30.6835,
+      "samples": 20
+    },
+    "rust": {
+      "min": 16.6299,
+      "p50": 17.054,
+      "p90": 25.6825,
+      "p99": 644.1267,
+      "mean": 48.935,
+      "samples": 20
+    },
+    "speedup_p50": 1.8
+  },
+  "warmThroughput": {
+    "parse": {
+      "node": {
+        "min": 1.3475,
+        "p50": 1.4523,
+        "p90": 1.522,
+        "p99": 1.8597,
+        "mean": 1.4541,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.383,
+        "p50": 0.4333,
+        "p90": 0.5361,
+        "p99": 0.611,
+        "mean": 0.4509,
+        "samples": 60
+      },
+      "speedup_p50": 3.35,
+      "speedup_p99": 3.04
+    },
+    "parse_valid": {
+      "node": {
+        "min": 0.0792,
+        "p50": 0.0807,
+        "p90": 0.1131,
+        "p99": 0.1352,
+        "mean": 0.0877,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.2562,
+        "p50": 0.2634,
+        "p90": 0.268,
+        "p99": 0.2805,
+        "mean": 0.2629,
+        "samples": 60
+      },
+      "speedup_p50": 0.31,
+      "speedup_p99": 0.48
+    },
+    "satisfies": {
+      "node": {
+        "min": 2.8992,
+        "p50": 3.1137,
+        "p90": 3.2852,
+        "p99": 4.9577,
+        "mean": 3.1669,
+        "samples": 60
+      },
+      "rust": {
+        "min": 3.3532,
+        "p50": 3.3867,
+        "p90": 3.4123,
+        "p99": 3.442,
+        "mean": 3.3871,
+        "samples": 60
+      },
+      "speedup_p50": 0.92,
+      "speedup_p99": 1.44
+    },
+    "range_parse": {
+      "node": {
+        "min": 0.229,
+        "p50": 0.267,
+        "p90": 0.3362,
+        "p99": 0.4122,
+        "mean": 0.2798,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.3033,
+        "p50": 0.3048,
+        "p90": 0.3108,
+        "p99": 0.329,
+        "mean": 0.3065,
+        "samples": 60
+      },
+      "speedup_p50": 0.88,
+      "speedup_p99": 1.25
+    },
+    "sort": {
+      "node": {
+        "min": 0.8647,
+        "p50": 0.9038,
+        "p90": 1.0028,
+        "p99": 1.9085,
+        "mean": 0.9603,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.3405,
+        "p50": 0.3443,
+        "p90": 0.3537,
+        "p99": 0.3647,
+        "mean": 0.3456,
+        "samples": 60
+      },
+      "speedup_p50": 2.63,
+      "speedup_p99": 5.23
+    },
+    "coerce": {
+      "node": {
+        "min": 0.167,
+        "p50": 0.1842,
+        "p90": 0.2291,
+        "p99": 0.3439,
+        "mean": 0.1938,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.557,
+        "p50": 0.561,
+        "p90": 0.5922,
+        "p99": 0.6068,
+        "mean": 0.5656,
+        "samples": 60
+      },
+      "speedup_p50": 0.33,
+      "speedup_p99": 0.57
+    },
+    "coerce_regex_only": {
+      "node": {
+        "min": 0.0594,
+        "p50": 0.0613,
+        "p90": 0.0838,
+        "p99": 0.1134,
+        "mean": 0.0656,
+        "samples": 60
+      },
+      "rust": {
+        "min": 0.1295,
+        "p50": 0.1306,
+        "p90": 0.1358,
+        "p99": 0.137,
+        "mean": 0.1314,
+        "samples": 60
+      },
+      "speedup_p50": 0.47,
+      "speedup_p99": 0.83
+    }
+  }
+}

@@ -4,7 +4,7 @@ use crate::comparator::Comparator;
 use crate::identifiers::Identifier;
 use crate::options::Options;
 use crate::range::Range;
-use crate::semver::SemVer;
+use crate::semver::{compare_with, SemVer};
 use crate::{Error, Result};
 
 /// Port of `outside()`.
@@ -23,33 +23,22 @@ pub fn outside(
     let version = SemVer::new(version, options)?;
     let range = Range::new(range, options)?;
 
-    // (gt, lte, lt) in ">" mode; (lt, gte, gt) in "<" mode.
-    let (gtfn, ltefn, ltfn, comp, ecomp): (
-        fn(&SemVer, &SemVer) -> bool,
-        fn(&SemVer, &SemVer) -> bool,
-        fn(&SemVer, &SemVer) -> bool,
-        &str,
-        &str,
-    ) = match hilo {
-        ">" => (
-            |a, b| a.compare(b) > 0,
-            |a, b| a.compare(b) <= 0,
-            |a, b| a.compare(b) < 0,
-            ">",
-            ">=",
-        ),
-        "<" => (
-            |a, b| a.compare(b) < 0,
-            |a, b| a.compare(b) >= 0,
-            |a, b| a.compare(b) > 0,
-            "<",
-            "<=",
-        ),
+    // Upstream selects three comparison functions and then reads the rest of
+    // the body as if it were in ">" mode. Rather than juggling function
+    // pointers, capture the direction once: in ">" mode `ascending` is true.
+    let (ascending, comp, ecomp) = match hilo {
+        ">" => (true, ">", ">="),
+        "<" => (false, "<", "<="),
         _ => return Err(Error::new("Must provide a hilo val of \"<\" or \">\"")),
     };
+    // gtfn(a,b): a>b ascending, a<b descending.  ltfn(a,b): the mirror.
+    // ltefn(a,b): a<=b ascending, a>=b descending.
+    let gtfn = |c: i32| if ascending { c > 0 } else { c < 0 };
+    let ltfn = |c: i32| if ascending { c < 0 } else { c > 0 };
+    let ltefn = |c: i32| if ascending { c <= 0 } else { c >= 0 };
 
     // If it satisfies the range it is not outside.
-    if range.test(&version) {
+    if range.test(&version)? {
         return Ok(false);
     }
 
@@ -59,7 +48,7 @@ pub fn outside(
         let mut high: Option<&Comparator> = None;
         let mut low: Option<&Comparator> = None;
 
-        for c in comparators {
+        for c in comparators.iter() {
             let c = if c.is_any() { &any_fallback } else { c };
             if high.is_none() {
                 high = Some(c);
@@ -71,9 +60,12 @@ pub fn outside(
             let (Some(cs), Some(hs), Some(ls)) = (&c.semver, &h.semver, &l.semver) else {
                 continue;
             };
-            if gtfn(cs, hs) {
+            // Upstream passes `options` to gtfn but NOT to ltfn. That asymmetry
+            // is observable: the un-optioned call re-parses strictly and can
+            // throw where the optioned one would not.
+            if gtfn(compare_with(cs, hs, options)?) {
                 high = Some(c);
-            } else if ltfn(cs, ls) {
+            } else if ltfn(compare_with(cs, ls, Options::new())?) {
                 low = Some(c);
             }
         }
@@ -86,9 +78,14 @@ pub fn outside(
         }
 
         let Some(low_semver) = &low.semver else { continue };
-        if (low.operator.is_empty() || low.operator == comp) && ltefn(&version, low_semver) {
+        // Both of these are un-optioned upstream, hence Options::new().
+        if (low.operator.is_empty() || low.operator == comp)
+            && ltefn(compare_with(&version, low_semver, Options::new())?)
+        {
             return Ok(false);
-        } else if low.operator == ecomp && ltfn(&version, low_semver) {
+        } else if low.operator == ecomp
+            && ltfn(compare_with(&version, low_semver, Options::new())?)
+        {
             return Ok(false);
         }
     }
@@ -110,18 +107,18 @@ pub fn min_version(range: &str, options: impl Into<Options> + Copy) -> Result<Op
     let range = Range::new(range, options)?;
 
     let zero = SemVer::new("0.0.0", Options::new())?;
-    if range.test(&zero) {
+    if range.test(&zero)? {
         return Ok(Some(zero));
     }
     let zero_pre = SemVer::new("0.0.0-0", Options::new())?;
-    if range.test(&zero_pre) {
+    if range.test(&zero_pre)? {
         return Ok(Some(zero_pre));
     }
 
     let mut minver: Option<SemVer> = None;
     for comparators in &range.set {
         let mut set_min: Option<SemVer> = None;
-        for c in comparators {
+        for c in comparators.iter() {
             let Some(cs) = &c.semver else { continue };
             // Clone so the comparator's own version is never mutated.
             let mut compver = SemVer::new(&cs.version, Options::new())?;
@@ -155,7 +152,10 @@ pub fn min_version(range: &str, options: impl Into<Options> + Copy) -> Result<Op
     }
 
     Ok(match minver {
-        Some(m) if range.test(&m) => Some(m),
+        // This `test` is the one that can throw: `minver` was built with default
+        // options and possibly had its patch bumped past MAX_SAFE_INTEGER, so a
+        // range carrying loose/includePrerelease forces a re-parse that rejects it.
+        Some(m) if range.test(&m)? => Some(m),
         _ => None,
     })
 }
@@ -169,7 +169,7 @@ pub fn min_satisfying(
     let range_obj = Range::new(range, options).ok()?;
     let mut min: Option<(String, SemVer)> = None;
     for v in versions {
-        if !range_obj.test_str(v) {
+        if !range_obj.test_str(v).unwrap_or(false) {
             continue;
         }
         let Ok(sv) = SemVer::new(v, options) else { continue };
@@ -191,7 +191,7 @@ pub fn max_satisfying(
     let range_obj = Range::new(range, options).ok()?;
     let mut max: Option<(String, SemVer)> = None;
     for v in versions {
-        if !range_obj.test_str(v) {
+        if !range_obj.test_str(v).unwrap_or(false) {
             continue;
         }
         let Ok(sv) = SemVer::new(v, options) else { continue };

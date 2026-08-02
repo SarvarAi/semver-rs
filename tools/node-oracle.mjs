@@ -24,6 +24,13 @@ const Range = require(path.join(ROOT, 'vendor', 'node-semver', 'classes', 'range
 const Comparator = require(path.join(ROOT, 'vendor', 'node-semver', 'classes', 'comparator.js'))
 const { compareIdentifiers } = require(path.join(ROOT, 'vendor', 'node-semver', 'internal', 'identifiers.js'))
 
+// JSON.stringify leaves U+2028/U+2029 raw, but Node's readline treats them as
+// line terminators — so an unescaped one splits a JSONL record in half and the
+// call is silently lost. Escape them on the wire; the value is unchanged.
+const enc = (o) => JSON.stringify(o)
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029')
+
 // `null` on the wire means "argument absent" (JS undefined).
 const u = (x) => (x === null ? undefined : x)
 
@@ -103,19 +110,19 @@ for await (const line of rl) {
   try {
     call = JSON.parse(line)
   } catch (e) {
-    out.push(JSON.stringify({ id: null, ok: false, e: `bad input line: ${e.message}` }))
+    out.push(enc({ id: null, ok: false, e: `bad input line: ${e.message}` }))
     continue
   }
   const fn = FNS[call.fn]
   if (!fn) {
-    out.push(JSON.stringify({ id: call.id, ok: false, e: `unknown fn: ${call.fn}` }))
+    out.push(enc({ id: call.id, ok: false, e: `unknown fn: ${call.fn}` }))
     continue
   }
   try {
     const v = fn(call.a)
-    out.push(JSON.stringify({ id: call.id, ok: true, v: v === undefined ? null : v }))
+    out.push(enc({ id: call.id, ok: true, v: v === undefined ? null : v }))
   } catch (e) {
-    out.push(JSON.stringify({ id: call.id, ok: false, e: String(e && e.message ? e.message : e) }))
+    out.push(enc({ id: call.id, ok: false, e: String(e && e.message ? e.message : e) }))
   }
   if (out.length >= 4096) {
     process.stdout.write(`${out.join('\n')}\n`)

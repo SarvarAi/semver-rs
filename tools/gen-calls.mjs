@@ -23,7 +23,13 @@ const mode = process.argv[2] ?? 'fixtures'
 
 let id = 0
 const out = []
-const emit = (m, fn, a) => out.push(JSON.stringify({ id: id++, m, fn, a }))
+// JSON.stringify leaves U+2028/U+2029 raw, but Node's readline treats them as
+// line terminators — so an unescaped one splits a JSONL record in half and the
+// call is silently lost. Escape them on the wire; the value is unchanged.
+const enc = (o) => JSON.stringify(o)
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029')
+const emit = (m, fn, a) => out.push(enc({ id: id++, m, fn, a }))
 
 const OPTS = [
   null,

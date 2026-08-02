@@ -7,6 +7,7 @@
 //! order, because each stage assumes the previous one has run.
 
 use std::cell::RefCell;
+use std::sync::Arc;
 
 use regex::Captures;
 
@@ -21,7 +22,7 @@ use crate::{Error, Result};
 thread_local! {
     /// Mirrors upstream's module-level `const cache = new LRU()`. Range parsing
     /// is a hot and fully deterministic path.
-    static RANGE_CACHE: RefCell<LruCache<Vec<Comparator>>> = RefCell::new(LruCache::new());
+    static RANGE_CACHE: RefCell<LruCache<Arc<Vec<Comparator>>>> = RefCell::new(LruCache::new());
 }
 
 /// JavaScript `s.replace(/\s+/g, ' ')`.
@@ -39,7 +40,11 @@ fn js_split_ws(s: &str) -> Vec<&str> {
 pub struct Range {
     pub raw: String,
     /// Outer list is `||`; inner list is AND.
-    pub set: Vec<Vec<Comparator>>,
+    ///
+    /// Shared via `Arc` because `parse_range` is memoized and upstream hands
+    /// back the cached array *by reference*. Deep-cloning it on every cache hit
+    /// made `Range` construction measurably slower than the original.
+    pub set: Vec<Arc<Vec<Comparator>>>,
     pub options: Options,
     pub loose: bool,
     pub include_prerelease: bool,
@@ -63,7 +68,7 @@ impl Range {
         // as `raw`, including for error messages.
         let raw = js_collapse_whitespace(js_trim(range));
 
-        let mut set: Vec<Vec<Comparator>> = Vec::new();
+        let mut set: Vec<Arc<Vec<Comparator>>> = Vec::new();
         for part in raw.split("||") {
             let comps = Self::parse_range(js_trim(part), options)?;
             // Empty comparator lists mean the segment was not a valid range,
@@ -126,7 +131,7 @@ impl Range {
         &self.formatted
     }
 
-    fn parse_range(range: &str, options: Options) -> Result<Vec<Comparator>> {
+    fn parse_range(range: &str, options: Options) -> Result<Arc<Vec<Comparator>>> {
         // Strip build metadata so it cannot bleed into the version. Upstream
         // deliberately uses the *unbounded* BUILD source with a global flag here.
         let range = RE.raw(re::BUILD).replace_all(range, "").into_owned();
@@ -180,12 +185,21 @@ impl Range {
             range_list.retain(|comp| RE.safe(re::COMPARATORLOOSE).is_match(comp));
         }
 
+        // Upstream builds the whole comparator array with `.map()` *before*
+        // scanning it for the null set, so an invalid comparator later in the
+        // list still throws even when an earlier one was `<0.0.0-0`. Collecting
+        // first — rather than short-circuiting inside the loop — preserves that
+        // ordering. The differential fuzzer caught the difference.
+        let comparators: Vec<Comparator> = range_list
+            .iter()
+            .map(|comp| Comparator::new(comp, options))
+            .collect::<Result<Vec<_>>>()?;
+
         // Dedupe by comparator value, preserving first-insertion order (JS Map).
         let mut ordered: Vec<(String, Comparator)> = Vec::new();
-        for comp in &range_list {
-            let c = Comparator::new(comp, options)?;
+        for c in comparators {
             if is_null_set(&c) {
-                return Ok(vec![c]);
+                return Ok(Arc::new(vec![c]));
             }
             match ordered.iter_mut().find(|(k, _)| *k == c.value) {
                 Some(slot) => slot.1 = c,
@@ -196,26 +210,36 @@ impl Range {
             ordered.retain(|(k, _)| !k.is_empty());
         }
 
-        let result: Vec<Comparator> = ordered.into_iter().map(|(_, c)| c).collect();
-        RANGE_CACHE.with(|c| c.borrow_mut().set(memo_key, result.clone()));
+        let result: Arc<Vec<Comparator>> =
+            Arc::new(ordered.into_iter().map(|(_, c)| c).collect());
+        RANGE_CACHE.with(|c| c.borrow_mut().set(memo_key, Arc::clone(&result)));
         Ok(result)
     }
 
     /// Port of `test(version)` for a parsed version.
-    pub fn test(&self, version: &SemVer) -> bool {
-        self.set.iter().any(|s| test_set(s, version, self.options))
+    ///
+    /// Fallible for the same reason `Comparator::test` is: a version whose
+    /// flags differ from this range's gets re-parsed inside `cmp`, and that
+    /// re-parse can throw.
+    pub fn test(&self, version: &SemVer) -> Result<bool> {
+        for s in &self.set {
+            if test_set(s, version, self.options)? {
+                return Ok(true);
+            }
+        }
+        Ok(false)
     }
 
     /// Port of `test(version)` for a string. An empty or unparseable version is
     /// `false`, matching upstream's `if (!version) return false` plus its
     /// swallowed constructor error.
-    pub fn test_str(&self, version: &str) -> bool {
+    pub fn test_str(&self, version: &str) -> Result<bool> {
         if version.is_empty() {
-            return false;
+            return Ok(false);
         }
         match SemVer::new(version, self.options) {
             Ok(v) => self.test(&v),
-            Err(_) => false,
+            Err(_) => Ok(false),
         }
     }
 
@@ -231,8 +255,8 @@ impl Range {
                     continue;
                 }
                 let mut all = true;
-                'outer: for tc in this_comparators {
-                    for rc in range_comparators {
+                'outer: for tc in this_comparators.iter() {
+                    for rc in range_comparators.iter() {
                         if !tc.intersects(rc, options)? {
                             all = false;
                             break 'outer;
@@ -545,10 +569,10 @@ fn hyphen_replace(caps: &Captures, inc_pr: bool) -> String {
 // ---------------------------------------------------------------------------
 
 /// Port of `testSet`.
-fn test_set(set: &[Comparator], version: &SemVer, options: Options) -> bool {
+fn test_set(set: &[Comparator], version: &SemVer, options: Options) -> Result<bool> {
     for c in set {
-        if !c.test(version) {
-            return false;
+        if !c.test(version)? {
+            return Ok(false);
         }
     }
 
@@ -566,13 +590,13 @@ fn test_set(set: &[Comparator], version: &SemVer, options: Options) -> bool {
                 && allowed.minor == version.minor
                 && allowed.patch == version.patch
             {
-                return true;
+                return Ok(true);
             }
         }
-        return false;
+        return Ok(false);
     }
 
-    true
+    Ok(true)
 }
 
 /// Port of `ranges/valid.js` — `validRange`.
@@ -602,9 +626,12 @@ pub fn to_comparators(range: &str, options: impl Into<Options>) -> Result<Vec<Ve
 }
 
 /// Port of `functions/satisfies.js`.
+/// Upstream lets a `test` error escape `satisfies`, but that branch is
+/// unreachable from a string version: the version is constructed with the
+/// range's own options, so the flags always match and no re-parse happens.
 pub fn satisfies(version: &str, range: &str, options: impl Into<Options> + Copy) -> bool {
     match Range::new(range, options) {
-        Ok(r) => r.test_str(version),
+        Ok(r) => r.test_str(version).unwrap_or(false),
         Err(_) => false,
     }
 }

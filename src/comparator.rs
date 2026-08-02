@@ -3,7 +3,7 @@
 use crate::functions::cmp_semver;
 use crate::options::Options;
 use crate::re::{self, RE};
-use crate::semver::SemVer;
+use crate::semver::{compare_with, SemVer};
 use crate::{Error, Result};
 
 /// A single comparator such as `>=1.2.3`.
@@ -59,22 +59,30 @@ impl Comparator {
     }
 
     /// Port of `test(version)` for an already-parsed version.
-    pub fn test(&self, version: &SemVer) -> bool {
+    ///
+    /// Returns `Result` because upstream routes through
+    /// `cmp(version, op, this.semver, this.options)`, and `cmp` reaches
+    /// `new SemVer(x, options)` for *both* operands. When the supplied version
+    /// carries different flags than this comparator, that constructor re-parses
+    /// and can throw — see `SemVer::with_options`.
+    pub fn test(&self, version: &SemVer) -> Result<bool> {
         let Some(ref sv) = self.semver else {
-            return true;
+            return Ok(true);
         };
-        cmp_semver(version, &self.operator, sv).unwrap_or(false)
+        let a = version.with_options(self.options)?;
+        let b = sv.with_options(self.options)?;
+        cmp_semver(&a, &self.operator, &b)
     }
 
     /// Port of `test(version)` for a string, where an unparseable version is
     /// `false` rather than an error.
-    pub fn test_str(&self, version: &str) -> bool {
+    pub fn test_str(&self, version: &str) -> Result<bool> {
         if self.semver.is_none() {
-            return true;
+            return Ok(true);
         }
         match SemVer::new(version, self.options) {
             Ok(v) => self.test(&v),
-            Err(_) => false,
+            Err(_) => Ok(false),
         }
     }
 
@@ -86,17 +94,17 @@ impl Comparator {
             if self.value.is_empty() {
                 return Ok(true);
             }
-            return Ok(crate::range::Range::new(&comp.value, options)?.test_str(&self.value));
+            return crate::range::Range::new(&comp.value, options)?.test_str(&self.value);
         }
         if comp.operator.is_empty() {
             if comp.value.is_empty() {
                 return Ok(true);
             }
             let r = crate::range::Range::new(&self.value, options)?;
-            return Ok(match &comp.semver {
+            return match &comp.semver {
                 Some(sv) => r.test(sv),
-                None => true,
-            });
+                None => Ok(true),
+            };
         }
 
         // Nothing can possibly be lower than the null set.
@@ -130,11 +138,14 @@ impl Comparator {
         {
             return Ok(true);
         }
-        // Opposite directions that still overlap.
-        if a.compare(b) < 0 && self.operator.starts_with('>') && comp.operator.starts_with('<') {
+        // Opposite directions that still overlap. Upstream routes these through
+        // `cmp(this.semver, op, comp.semver, options)`, which re-parses both
+        // operands under `options` and can therefore throw.
+        let ordering = compare_with(a, b, options)?;
+        if ordering < 0 && self.operator.starts_with('>') && comp.operator.starts_with('<') {
             return Ok(true);
         }
-        if a.compare(b) > 0 && self.operator.starts_with('<') && comp.operator.starts_with('>') {
+        if ordering > 0 && self.operator.starts_with('<') && comp.operator.starts_with('>') {
             return Ok(true);
         }
         Ok(false)
