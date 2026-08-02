@@ -9,3 +9,4 @@ Cargo.lock.bak
 node_modules/
 *.tmp
 .DS_Store
+fuzz/runs/

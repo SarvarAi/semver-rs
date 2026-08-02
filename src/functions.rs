@@ -356,3 +356,20 @@ pub fn coerce(version: &str, options: CoerceOptions) -> Option<SemVer> {
         Options { loose: options.loose, include_prerelease: options.include_prerelease },
     )
 }
+
+// ---------------------------------------------------------------------------
+// inc
+// ---------------------------------------------------------------------------
+
+/// Port of `functions/inc.js`. Swallows every error into `None`, as upstream does.
+pub fn inc(
+    version: &str,
+    release: &str,
+    options: impl Into<Options>,
+    identifier: Option<&str>,
+    identifier_base: &crate::semver::IdentifierBase,
+) -> Option<String> {
+    let mut sv = SemVer::new(version, options).ok()?;
+    sv.inc(release, identifier, identifier_base).ok()?;
+    Some(sv.version.clone())
+}

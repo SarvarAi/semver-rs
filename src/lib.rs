@@ -29,7 +29,7 @@ pub mod util;
 pub use constants::{RELEASE_TYPES, SEMVER_SPEC_VERSION};
 pub use functions::{
     clean, cmp, compare, compare_build, compare_loose, coerce, diff, eq, gt, gte, lt, lte, major,
-    minor, neq, parse, patch, prerelease, rcompare, rsort, sort, truncate, valid, CoerceOptions,
+    inc, minor, neq, parse, patch, prerelease, rcompare, rsort, sort, truncate, valid, CoerceOptions,
 };
 pub use identifiers::{compare_identifiers, rcompare_identifiers, Identifier};
 pub use options::Options;

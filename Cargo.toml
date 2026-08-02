@@ -45,4 +45,3 @@ harness = ["dep:serde_json"]
 opt-level = 3
 lto = true
 codegen-units = 1
-panic = "abort"

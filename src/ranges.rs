@@ -222,22 +222,29 @@ pub fn simplify_range(
     options: impl Into<Options> + Copy,
 ) -> Result<String> {
     let mut v: Vec<String> = versions.to_vec();
-    // Upstream sorts in place with `compare`, which throws on a bad version.
-    let mut parsed: Vec<(String, SemVer)> = Vec::with_capacity(v.len());
-    for s in &v {
-        parsed.push((s.clone(), SemVer::new(s, options)?));
-    }
-    parsed.sort_by(|a, b| a.1.compare(&b.1).cmp(&0));
-    v = parsed.into_iter().map(|(s, _)| s).collect();
 
-    let range_obj = Range::new(range, options)?;
+    // Upstream sorts with `compare`, which throws on a bad version — but
+    // `Array.prototype.sort` never invokes the comparator for a list of fewer
+    // than two elements, so `simplifyRange(['nonsense'], '*')` does NOT throw
+    // upstream. Reproduce that boundary exactly.
+    if v.len() >= 2 {
+        let mut parsed: Vec<(String, SemVer)> = Vec::with_capacity(v.len());
+        for s in &v {
+            parsed.push((s.clone(), SemVer::new(s, options)?));
+        }
+        parsed.sort_by(|a, b| a.1.compare(&b.1).cmp(&0));
+        v = parsed.into_iter().map(|(s, _)| s).collect();
+    }
 
     let mut set: Vec<(String, Option<String>)> = Vec::new();
     let mut first: Option<String> = None;
     let mut prev: Option<String> = None;
 
     for version in &v {
-        if range_obj.test_str(version) {
+        // Upstream calls `satisfies`, which swallows both an invalid version
+        // and an invalid range into `false`. It never constructs a Range here,
+        // so a malformed range is not an error either.
+        if crate::range::satisfies(version, range, options) {
             prev = Some(version.clone());
             if first.is_none() {
                 first = Some(version.clone());
