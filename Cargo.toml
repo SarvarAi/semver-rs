@@ -2,7 +2,7 @@
 name = "semver-npm"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.70"
+rust-version = "1.80"
 license = "ISC"
 description = "A Rust port of npm/node-semver — npm's semantic version and version-range dialect"
 repository = "https://github.com/SarvarAi/semver-rs"
